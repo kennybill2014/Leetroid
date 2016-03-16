@@ -1,18 +1,21 @@
 package joey.com.leetroid.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 import joey.com.leetroid.Problem;
+import joey.com.leetroid.ProblemActivity;
 import joey.com.leetroid.ProblemListItemView;
 import joey.com.leetroid.ProblemsContainer;
 import joey.com.leetroid.R;
@@ -30,6 +33,13 @@ public class MainListFragment extends Fragment {
         View view = inflater.inflate(R.layout.main_list_fragment, container, false);
         mUniversalSetList = (ListView) view.findViewById(R.id.problem_region_universal_list);
         mUniversalSetList.setAdapter(new ProblemListAdapter(getActivity()));
+        mUniversalSetList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainListFragment.this.getActivity(), ProblemActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

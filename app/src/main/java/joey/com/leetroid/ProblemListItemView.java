@@ -44,6 +44,7 @@ public class ProblemListItemView extends RelativeLayout implements View.OnClickL
         mTitleView = (TextView) findViewById(R.id.problem_region_title);
         mDifficultyView = (TextView) findViewById(R.id.problem_region_difficulty);
         mImageView.setOnClickListener(this);
+        //setOnClickListener(this);
     }
 
     public void setProblemAttributes(Problem problem) {
@@ -61,6 +62,9 @@ public class ProblemListItemView extends RelativeLayout implements View.OnClickL
     public void onClick(View v) {
         if (v == mImageView) {
 //            mImageView.setBackgroundResource(R.mipmap.starred);
+            System.out.println("Image Clicked");
+        } else {
+            System.out.println("Other Clicked");
         }
     }
 
