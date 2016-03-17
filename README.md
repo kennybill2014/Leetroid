@@ -1,3 +1,3 @@
 # Leetroid
-A Leetcode Android app on how to solve LeetCode problems
+A Leetcode Android app showing answers to LeetCode problems
 
