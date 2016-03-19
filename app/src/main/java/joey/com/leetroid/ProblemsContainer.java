@@ -2,9 +2,15 @@ package joey.com.leetroid;
 
 import java.util.ArrayList;
 
+// :syntax on
+// :colorscheme desert
+// :let html_use_css=0
+// :TOhtml
+
 public class ProblemsContainer {
 
     private ArrayList<Problem> mProblems = new ArrayList<Problem>();
+    private ArrayList<String> mProblemTexts = new ArrayList<String>();
 
     private static ProblemsContainer sInstance;
 
@@ -37,8 +43,21 @@ public class ProblemsContainer {
     }
 
     public Problem getProblem(int index) {
-        if (mProblems != null) {
+        if (mProblems != null && index < mProblems.size()) {
             return mProblems.get(index);
+        }
+        return null;
+    }
+
+    public void addProblemText(String text) {
+        if (mProblemTexts != null) {
+            mProblemTexts.add(text);
+        }
+    }
+
+    public String getProblemText(int position) {
+        if (mProblemTexts != null && position < mProblemTexts.size()) {
+            return mProblemTexts.get(position);
         }
         return null;
     }

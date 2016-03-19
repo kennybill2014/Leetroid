@@ -37,6 +37,7 @@ public class MainListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainListFragment.this.getActivity(), ProblemActivity.class);
+                intent.putExtra("fileindex", position);
                 startActivity(intent);
             }
         });
