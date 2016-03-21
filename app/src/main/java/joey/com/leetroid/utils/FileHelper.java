@@ -15,6 +15,8 @@ public class FileHelper {
 
     private Context mContext;
 
+    public int[] mFileIds = {R.raw.two_sum};
+
     public FileHelper(Context context) {
         mContext = context;
     }
@@ -24,25 +26,28 @@ public class FileHelper {
             @Override
             public void run() {
                 Resources res = mContext.getResources();
-                BufferedReader input = new BufferedReader(new InputStreamReader(
-                        res.openRawResource(rawId)));
-                StringBuffer sb = new StringBuffer();
-                try {
-                    String line;
-                    while ((line = input.readLine()) != null) {
-                        sb.append(line);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } finally {
+                BufferedReader input;
+                for (int i = 0; i < mFileIds.length; i++) {
+                    input = new BufferedReader(new InputStreamReader(res.openRawResource(mFileIds[i])));
+                    StringBuffer sb = new StringBuffer();
                     try {
-                        input.close();
+                        String line;
+                        while ((line = input.readLine()) != null) {
+                            sb.append(line);
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
+                    } finally {
+                        try {
+                            input.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
-                if (sb.length() > 0) {
-                    ProblemsContainer.getInstance().addProblemText(sb.toString());
+                    if (sb.length() > 0) {
+                        ProblemsContainer.getInstance().addProblemText(sb.toString());
+                        sb = null;
+                    }
                 }
             }
         }).start();
