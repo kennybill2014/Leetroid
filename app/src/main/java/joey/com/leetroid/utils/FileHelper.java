@@ -15,10 +15,21 @@ public class FileHelper {
 
     private Context mContext;
 
-    public int[] mFileIds = {R.raw.two_sum};
+    private Resources mResouces;
+
+    private String mPackageName;
+
+    public String[] mFileNames = {"two_sum", "two_sum_ii",
+            "two_sum_iii", "valid_palindrome",
+            "implement_strstr", "reverse_words_in_a_string",
+            "reverse_words_in_a_string_ii", "string_to_integer",
+            "valid_number", "further_thoughts",
+            "longest_substring_without_repeating_characters", "longest_substring_with_at_most_two_distinct_characters"};
 
     public FileHelper(Context context) {
         mContext = context;
+        mResouces = mContext.getResources();
+        mPackageName = mContext.getPackageName();
     }
 
     public void startRead(final int rawId) {
@@ -27,8 +38,8 @@ public class FileHelper {
             public void run() {
                 Resources res = mContext.getResources();
                 BufferedReader input;
-                for (int i = 0; i < mFileIds.length; i++) {
-                    input = new BufferedReader(new InputStreamReader(res.openRawResource(mFileIds[i])));
+                for (int i = 0; i < 1; i++) { // 应该是mFileNames.length
+                    input = new BufferedReader(new InputStreamReader(res.openRawResource(mResouces.getIdentifier(mFileNames[i], "raw", mPackageName))));
                     StringBuffer sb = new StringBuffer();
                     try {
                         String line;
