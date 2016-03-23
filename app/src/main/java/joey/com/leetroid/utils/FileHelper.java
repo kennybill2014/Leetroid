@@ -24,7 +24,7 @@ public class FileHelper {
             "implement_strstr", "reverse_words_in_a_string",
             "reverse_words_in_a_string_ii", "string_to_integer",
             "valid_number", "further_thoughts",
-            "longest_substring_without_repeating_characters", "longest_substring_with_at_most_two_distinct_characters"};
+            "longest_substring_without_repeating_characters", "longest_substring_with_at_most_two_distinct_characters" };
 
     public FileHelper(Context context) {
         mContext = context;
