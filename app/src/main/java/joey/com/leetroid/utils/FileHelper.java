@@ -24,7 +24,13 @@ public class FileHelper {
             "implement_strstr", "reverse_words_in_a_string",
             "reverse_words_in_a_string_ii", "string_to_integer",
             "valid_number", "further_thoughts",
-            "longest_substring_without_repeating_characters", "longest_substring_with_at_most_two_distinct_characters" };
+            "longest_substring_without_repeating_characters", "longest_substring_with_at_most_two_distinct_characters",
+            "missing_ranges", "longest_palindromic_substring",
+            "one_edit_distance", "read_n_characters_given_read4",
+            "read_n_characters_given_read4_call_multiple_times", "reverse_integer",
+            "plus_one", "palindrome_number",
+            "merge_two_sorted_lists", "add_two_numbers",
+            "swap_nodes_in_pairs", "merge_k_sorted_linked_lists"};
 
     public FileHelper(Context context) {
         mContext = context;
