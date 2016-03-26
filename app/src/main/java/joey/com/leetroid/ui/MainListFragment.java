@@ -65,6 +65,7 @@ public class MainListFragment extends Fragment {
 
         @Override
         public int getCount() {
+            System.out.println("Get count ");
             return ProblemsContainer.getInstance().getSize();
         }
 
@@ -84,6 +85,7 @@ public class MainListFragment extends Fragment {
                 ProblemListItemView view = (ProblemListItemView) LayoutInflater.from(mContext).inflate(R.layout.problem_list_item, null);
                 Problem problem = ProblemsContainer.getInstance().getProblem(position);
                 view.setProblemAttributes(problem);
+                System.out.println("Position " + position + " Title " + problem.mTitle);
                 return view;
             } else {
                 return convertView;

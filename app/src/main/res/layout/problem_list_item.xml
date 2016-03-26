@@ -7,7 +7,7 @@
         android:id="@+id/problem_region_star"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_margin="8dp"
+        android:layout_margin="18dp"
         android:scaleType="fitXY"
         android:layout_centerVertical="true"
         android:src="@mipmap/unstarred"
@@ -18,8 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="8dp"
-        android:textSize="16dp"
+        android:layout_marginRight="18dp"
+        android:textSize="17dp"
         />
     <TextView
         android:layout_toRightOf="@id/problem_region_star"
@@ -28,6 +28,7 @@
         android:id="@+id/problem_region_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="17dp"
         />
 </joey.com.leetroid.ProblemListItemView>

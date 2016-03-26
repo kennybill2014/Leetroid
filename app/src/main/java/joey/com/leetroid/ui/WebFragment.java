@@ -6,23 +6,28 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import joey.com.leetroid.R;
 
 public class WebFragment extends Fragment {
+
+    private WebView mWebView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         System.out.println("onCreateView in SecondFragment");
-        return inflater.inflate(R.layout.web_fragment, container, false);
+        View view = inflater.inflate(R.layout.web_fragment, container, false);
+        mWebView = (WebView) view.findViewById(R.id.webview);
+        mWebView.loadUrl("https://leetcode.com/discuss/");
+        return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         System.out.println("onActivityCreated in SecondFragment");
         super.onActivityCreated(savedInstanceState);
-        TextView textView = (TextView) getActivity().findViewById(R.id.second_text_set);
-        textView.setText("Second");
     }
 }

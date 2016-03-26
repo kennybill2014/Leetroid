@@ -18,12 +18,17 @@ public final class Datas {
 
     public static String[] mProblems = {
             "Two Sum", "Two Sum II", "Two Sum III",
-            "Valid Palindrome", "Implement StrStr"
+            "Valid Palindrome", "Implement StrStr",
+            "Reverse Words In A String", "Reverse Words In A String II",
+            "String To Integer", "Valid Number",
+            "Further Thoughts"
     };
 
     public static String[] mDifficulties = {
             "Easy", "Easy", "Easy",
-            "Easy", "Easy"
+            "Easy", "Easy", "Easy",
+            "Easy", "Easy", "Easy",
+            "Easy"
     };
 
 }

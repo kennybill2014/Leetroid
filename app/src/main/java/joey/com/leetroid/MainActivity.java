@@ -49,9 +49,9 @@ public class MainActivity extends FragmentActivity {
         mFragmentTabHost = (FragmentTabHost) findViewById(R.id.tab_host);
         mFragmentTabHost.setup(this, getSupportFragmentManager(), R.id.frame_container);
 
-        mFragmentTabHost.addTab(getIndicator(MainActivity.this, mFragmentTabHost.newTabSpec(TAB_ONE_TAG), "#10000000",
+        mFragmentTabHost.addTab(getIndicator(MainActivity.this, mFragmentTabHost.newTabSpec(TAB_ONE_TAG), "#363636",
                 "MainList", R.mipmap.ic_launcher), MainListContainerFragment.class, null);
-        mFragmentTabHost.addTab(getIndicator(MainActivity.this, mFragmentTabHost.newTabSpec(TAB_TWO_TAG), "#10000000",
+        mFragmentTabHost.addTab(getIndicator(MainActivity.this, mFragmentTabHost.newTabSpec(TAB_TWO_TAG), "#363636",
                 "Web", R.mipmap.ic_launcher), WebContainerFragment.class, null);
     }
 
