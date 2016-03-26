@@ -14,8 +14,8 @@ public class ProblemListHelper {
     }
 
     public void startBuild() {
-        for (int i = 0; i < 1; i++) {
-            Problem problem = new Problem(false, "Two Sum", "Easy");
+        for (int i = 0; i < Datas.mProblems.length; i++) {
+            Problem problem = new Problem(false, Datas.mProblems[i], Datas.mDifficulties[i]);
             ProblemsContainer.getInstance().addProblem(problem);
         }
     }
