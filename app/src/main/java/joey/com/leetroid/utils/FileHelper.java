@@ -38,7 +38,7 @@ public class FileHelper {
         mPackageName = mContext.getPackageName();
     }
 
-    public void startRead(final int rawId) {
+    public void startRead() {
         new Thread(new Runnable() {
             @Override
             public void run() {

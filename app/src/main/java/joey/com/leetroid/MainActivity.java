@@ -14,6 +14,7 @@ import android.widget.TextView;
 import joey.com.leetroid.ui.MainListContainerFragment;
 import joey.com.leetroid.ui.WebContainerFragment;
 import joey.com.leetroid.utils.FileHelper;
+import joey.com.leetroid.utils.ProblemListHelper;
 
 public class MainActivity extends FragmentActivity {
 
@@ -21,6 +22,7 @@ public class MainActivity extends FragmentActivity {
     public static final String TAB_TWO_TAG = "tab2";
     private FragmentTabHost mFragmentTabHost;
     private FileHelper mFileHelper;
+    private ProblemListHelper mProblemListHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +35,12 @@ public class MainActivity extends FragmentActivity {
 
     private void initProblemTexts() {
         mFileHelper = new FileHelper(this.getApplicationContext());
-        mFileHelper.startRead(R.raw.two_sum);
+        mFileHelper.startRead();
     }
 
     private void initProblems() {
-        for (int i = 0; i < 1; i++) {
-            Problem problem = new Problem(false, "Two Sum", "Easy");
-            ProblemsContainer.getInstance().addProblem(problem);
-        }
+        mProblemListHelper = new ProblemListHelper(this.getApplicationContext());
+        mProblemListHelper.startBuild();
     }
 
     private void initView() {
