@@ -82,14 +82,12 @@ public class MainListFragment extends Fragment {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
-                ProblemListItemView view = (ProblemListItemView) LayoutInflater.from(mContext).inflate(R.layout.problem_list_item, null);
-                Problem problem = ProblemsContainer.getInstance().getProblem(position);
-                view.setProblemAttributes(problem);
-                System.out.println("Position " + position + " Title " + problem.mTitle);
-                return view;
-            } else {
-                return convertView;
+                convertView = LayoutInflater.from(mContext).inflate(R.layout.problem_list_item, null);
             }
+            Problem problem = ProblemsContainer.getInstance().getProblem(position);
+            System.out.println("Position " + position + " Title " + problem.mTitle);
+            ((ProblemListItemView)convertView).setProblemAttributes(problem);
+            return convertView;
         }
     }
 }
