@@ -46,7 +46,6 @@ public class MainActivity extends FragmentActivity {
 
     private void initView() {
         System.out.println("Init Views in MainActivity");
-        //mFragmentTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mFragmentTabHost = (FragmentTabHost) findViewById(R.id.tab_host);
         mFragmentTabHost.setup(this, getSupportFragmentManager(), R.id.frame_container);
 
@@ -54,6 +53,7 @@ public class MainActivity extends FragmentActivity {
                 "MainList", R.mipmap.ic_launcher), MainListContainerFragment.class, null);
         mFragmentTabHost.addTab(getIndicator(MainActivity.this, mFragmentTabHost.newTabSpec(TAB_TWO_TAG), "#363636",
                 "Web", R.mipmap.ic_launcher), WebContainerFragment.class, null);
+        mFragmentTabHost.getTabWidget().setDividerDrawable(null); // Remove the divider
     }
 
     private TabHost.TabSpec getIndicator(Context context, TabHost.TabSpec spec,

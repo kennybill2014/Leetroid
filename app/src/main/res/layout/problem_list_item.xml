@@ -19,7 +19,7 @@
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="18dp"
-        android:textSize="17dp"
+        android:textSize="16dp"
         />
     <TextView
         android:layout_toRightOf="@id/problem_region_star"
@@ -28,7 +28,6 @@
         android:id="@+id/problem_region_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:textSize="17dp"
+        android:textSize="16dp"
         />
 </joey.com.leetroid.ProblemListItemView>
