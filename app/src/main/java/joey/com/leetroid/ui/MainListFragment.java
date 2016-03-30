@@ -22,6 +22,7 @@ import joey.com.leetroid.R;
 
 public class MainListFragment extends Fragment {
 
+    private View mRootView;
     private ListView mUniversalSetList;
     private ArrayList<Problem> mUniversalProblems = new ArrayList<Problem>();
 
@@ -30,18 +31,12 @@ public class MainListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         System.out.println("onCreateView in FirstFragment");
-        View view = inflater.inflate(R.layout.main_list_fragment, container, false);
-        mUniversalSetList = (ListView) view.findViewById(R.id.problem_region_universal_list);
-        mUniversalSetList.setAdapter(new ProblemListAdapter(getActivity()));
-        mUniversalSetList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainListFragment.this.getActivity(), ProblemActivity.class);
-                intent.putExtra("fileindex", position);
-                startActivity(intent);
-            }
-        });
-        return view;
+        if (mRootView == null) {
+            View view = inflater.inflate(R.layout.main_list_fragment, container, false);
+            initViews(view);
+            mRootView = view;
+        }
+        return mRootView;
     }
 
     @Override
@@ -53,6 +48,19 @@ public class MainListFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    private void initViews(View view) {
+        mUniversalSetList = (ListView) view.findViewById(R.id.problem_region_universal_list);
+        mUniversalSetList.setAdapter(new ProblemListAdapter(getActivity()));
+        mUniversalSetList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainListFragment.this.getActivity(), ProblemActivity.class);
+                intent.putExtra("fileindex", position);
+                startActivity(intent);
+            }
+        });
     }
 
     public class ProblemListAdapter extends BaseAdapter {

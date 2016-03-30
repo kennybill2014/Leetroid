@@ -19,15 +19,20 @@ import joey.com.leetroid.R;
 
 public class WebFragment extends Fragment {
 
+    private View mRootView;
+
     private WebView mWebView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         System.out.println("onCreateView in SecondFragment");
-        View view = inflater.inflate(R.layout.web_fragment, container, false);
-        initWebView(view);
-        return view;
+        if (mRootView == null) {
+            View view = inflater.inflate(R.layout.web_fragment, container, false);
+            initWebView(view);
+            mRootView = view;
+        }
+        return mRootView;
     }
 
     @Override
