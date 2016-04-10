@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -19,10 +20,12 @@ import joey.com.leetroid.ProblemActivity;
 import joey.com.leetroid.ProblemListItemView;
 import joey.com.leetroid.ProblemsContainer;
 import joey.com.leetroid.R;
+import joey.com.leetroid.SearchFrameActivity;
 
 public class MainListFragment extends Fragment {
 
     private View mRootView;
+    private ImageView mImageView;
     private ListView mUniversalSetList;
     private ProblemListAdapter mAdapter;
     private ArrayList<Problem> mUniversalProblems = new ArrayList<Problem>();
@@ -53,6 +56,8 @@ public class MainListFragment extends Fragment {
 
     private void initViews(View view) {
         mAdapter = new ProblemListAdapter(getActivity());
+        mImageView = (ImageView) view.findViewById(R.id.search_icon);
+        mImageView.setOnClickListener(new SearchClickListener());
         mUniversalSetList = (ListView) view.findViewById(R.id.problem_region_universal_list);
         mUniversalSetList.setAdapter(mAdapter);
         mUniversalSetList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -98,6 +103,15 @@ public class MainListFragment extends Fragment {
             System.out.println("Position " + position + " Title " + problem.mTitle);
             ((ProblemListItemView)convertView).setProblemAttributes(problem, mAdapter);
             return convertView;
+        }
+    }
+
+    public class SearchClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent();
+            intent.setClass(getActivity(), SearchFrameActivity.class);
+            startActivity(intent);
         }
     }
 }
