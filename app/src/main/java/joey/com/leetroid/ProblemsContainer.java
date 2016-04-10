@@ -1,6 +1,7 @@
 package joey.com.leetroid;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 // :syntax on
 // :colorscheme desert
@@ -60,6 +61,14 @@ public class ProblemsContainer {
             return mProblemTexts.get(position);
         }
         return null;
+    }
+
+    public void refreshProblemList() {
+        for (int i = mProblems.size() - 1; i >= 1; i--) {
+            if (mProblems.get(i).mIsStared && !mProblems.get(i - 1).mIsStared) {
+                Collections.swap(mProblems, i, i - 1);
+            }
+        }
     }
 
 }

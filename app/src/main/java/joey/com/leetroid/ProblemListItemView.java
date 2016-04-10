@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import joey.com.leetroid.ui.MainListFragment.ProblemListAdapter;
+
 
 public class ProblemListItemView extends RelativeLayout implements View.OnClickListener {
 
@@ -17,6 +19,10 @@ public class ProblemListItemView extends RelativeLayout implements View.OnClickL
     private TextView mTitleView;
 
     private TextView mDifficultyView;
+
+    private Problem mProblem;
+
+    private ProblemListAdapter mAdapter;
 
     public ProblemListItemView(Context context) {
         super(context);
@@ -47,7 +53,9 @@ public class ProblemListItemView extends RelativeLayout implements View.OnClickL
         //setOnClickListener(this);
     }
 
-    public void setProblemAttributes(Problem problem) {
+    public void setProblemAttributes(Problem problem, ProblemListAdapter adapter) {
+        mAdapter = adapter;
+        mProblem = problem;
         mTitleView.setText(problem.mTitle);
         mDifficultyView.setText(problem.mDifficulty);
         isStared = problem.mIsStared;
@@ -61,10 +69,17 @@ public class ProblemListItemView extends RelativeLayout implements View.OnClickL
     @Override
     public void onClick(View v) {
         if (v == mImageView) {
-//            mImageView.setBackgroundResource(R.mipmap.starred);
-            System.out.println("Image Clicked");
-        } else {
-            System.out.println("Other Clicked");
+            if (mProblem.mIsStared) {
+                mProblem.mIsStared = false;
+                mImageView.setBackgroundResource(R.mipmap.unstarred);
+                ProblemsContainer.getInstance().refreshProblemList();
+                mAdapter.notifyDataSetChanged();
+            } else {
+                mProblem.mIsStared = true;
+                mImageView.setBackgroundResource(R.mipmap.starred);
+                ProblemsContainer.getInstance().refreshProblemList();
+                mAdapter.notifyDataSetChanged();
+            }
         }
     }
 

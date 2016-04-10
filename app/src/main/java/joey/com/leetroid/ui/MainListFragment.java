@@ -24,6 +24,7 @@ public class MainListFragment extends Fragment {
 
     private View mRootView;
     private ListView mUniversalSetList;
+    private ProblemListAdapter mAdapter;
     private ArrayList<Problem> mUniversalProblems = new ArrayList<Problem>();
 
 
@@ -51,8 +52,9 @@ public class MainListFragment extends Fragment {
     }
 
     private void initViews(View view) {
+        mAdapter = new ProblemListAdapter(getActivity());
         mUniversalSetList = (ListView) view.findViewById(R.id.problem_region_universal_list);
-        mUniversalSetList.setAdapter(new ProblemListAdapter(getActivity()));
+        mUniversalSetList.setAdapter(mAdapter);
         mUniversalSetList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -94,7 +96,7 @@ public class MainListFragment extends Fragment {
             }
             Problem problem = ProblemsContainer.getInstance().getProblem(position);
             System.out.println("Position " + position + " Title " + problem.mTitle);
-            ((ProblemListItemView)convertView).setProblemAttributes(problem);
+            ((ProblemListItemView)convertView).setProblemAttributes(problem, mAdapter);
             return convertView;
         }
     }

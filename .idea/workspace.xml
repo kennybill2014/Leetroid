@@ -31,14 +31,14 @@
     <leaf>
       <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -57,7 +57,20 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="269" column="52" selection-start-line="269" selection-start-column="52" selection-end-line="269" selection-end-column="52" />
-              <folding />
+              <folding>
+                <element signature="e#0#12121#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#2690#2691#0" expanded="false" />
+                <element signature="e#2732#2733#0" expanded="false" />
+                <element signature="e#3072#3073#0" expanded="false" />
+                <element signature="e#3113#3114#0" expanded="false" />
+                <element signature="e#3815#3816#0" expanded="false" />
+                <element signature="e#3872#3873#0" expanded="false" />
+                <element signature="e#3926#3927#0" expanded="false" />
+                <element signature="e#3985#3986#0" expanded="false" />
+                <element signature="e#7687#7688#0" expanded="false" />
+                <element signature="e#7727#7728#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,21 +80,66 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="149" column="35" selection-start-line="149" selection-start-column="35" selection-end-line="149" selection-end-column="35" />
-              <folding />
+              <folding>
+                <element signature="e#0#91657#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#5748#5749#0" expanded="false" />
+                <element signature="e#5789#5790#0" expanded="false" />
+                <element signature="e#14984#14985#0" expanded="false" />
+                <element signature="e#15035#15036#0" expanded="false" />
+                <element signature="e#15485#15486#0" expanded="false" />
+                <element signature="e#15509#15510#0" expanded="false" />
+                <element signature="e#16037#16038#0" expanded="false" />
+                <element signature="e#16098#16099#0" expanded="false" />
+                <element signature="e#19981#19982#0" expanded="false" />
+                <element signature="e#20025#20026#0" expanded="false" />
+                <element signature="e#21524#21525#0" expanded="false" />
+                <element signature="e#21572#21573#0" expanded="false" />
+                <element signature="e#21637#21638#0" expanded="false" />
+                <element signature="e#21680#21681#0" expanded="false" />
+                <element signature="e#21809#21810#0" expanded="false" />
+                <element signature="e#21891#21892#0" expanded="false" />
+                <element signature="e#22276#22277#0" expanded="false" />
+                <element signature="e#22362#22363#0" expanded="false" />
+                <element signature="e#22865#22866#0" expanded="false" />
+                <element signature="e#22951#22952#0" expanded="false" />
+                <element signature="e#23348#23349#0" expanded="false" />
+                <element signature="e#23413#23414#0" expanded="false" />
+                <element signature="e#23487#23488#0" expanded="false" />
+                <element signature="e#23531#23532#0" expanded="false" />
+                <element signature="e#25054#25055#0" expanded="false" />
+                <element signature="e#25084#25085#0" expanded="false" />
+                <element signature="e#25647#25648#0" expanded="false" />
+                <element signature="e#25680#25681#0" expanded="false" />
+                <element signature="e#50545#50546#0" expanded="false" />
+                <element signature="e#50599#50600#0" expanded="false" />
+                <element signature="e#50653#50654#0" expanded="false" />
+                <element signature="e#50704#50705#0" expanded="false" />
+                <element signature="e#81051#81052#0" expanded="false" />
+                <element signature="e#81086#81087#0" expanded="false" />
+                <element signature="e#81626#81627#0" expanded="false" />
+                <element signature="e#81678#81679#0" expanded="false" />
+                <element signature="e#82012#82013#0" expanded="false" />
+                <element signature="e#82073#82074#0" expanded="false" />
+                <element signature="e#82114#82115#0" expanded="false" />
+                <element signature="e#82166#82167#0" expanded="false" />
+                <element signature="e#91329#91330#0" expanded="false" />
+                <element signature="e#91356#91357#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="tab_item.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_item.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -105,11 +163,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Datas.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Datas.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/utils/Datas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57939917">
-              <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -117,27 +175,27 @@
       </file>
       <file leaf-file-name="web_fragment.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/web_fragment.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.275862">
+            <state vertical-scroll-proportion="0.0">
               <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_search.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="45" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -161,11 +219,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainListFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainListFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/MainListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.67596567">
+              <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -183,40 +241,40 @@
       </file>
       <file leaf-file-name="container_framelayout.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/container_framelayout.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_problem.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_problem.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="problem_list_item.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/problem_list_item.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -224,8 +282,10 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemListItemView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-              <folding />
+              <caret line="68" column="13" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -264,8 +324,12 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemsContainer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
-              <folding />
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#642#643#0" expanded="true" />
+                <element signature="e#674#675#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1826,8 +1890,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/BaseContainerFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/MainListContainerFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/WebContainerFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemListItemView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemsContainer.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_problem.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/utils/ProlemListHelper.java" />
@@ -1844,8 +1906,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/WebFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/MainListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/raw/two_sum.txt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemsContainer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemListItemView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/MainListFragment.java" />
       </list>
     </option>
   </component>
@@ -1886,10 +1950,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2040,6 +2100,10 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2241,8 +2305,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30028328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30028328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2262,6 +2325,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -2324,32 +2388,34 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_problem.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/problem_list_item.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/problem_list_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemListItemView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2373,19 +2439,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#674#675#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/MainActivity.java">
@@ -2397,14 +2467,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_list_fragment.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/BaseContainerFragment.java">
@@ -2446,32 +2516,34 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_problem.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/problem_list_item.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/problem_list_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemListItemView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2495,19 +2567,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#674#675#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/MainActivity.java">
@@ -2533,22 +2609,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="45" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemsContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
-          <folding />
-        </state>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/Problem.java">
@@ -2576,44 +2644,36 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/problem_list_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemListItemView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_problem.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_problem.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/BaseContainerFragment.java">
@@ -2625,14 +2685,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/container_framelayout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/WebContainerFragment.java">
@@ -2652,22 +2712,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/MainListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
-          <folding />
-        </state>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/SearchFrameActivity.java">
@@ -2689,7 +2741,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="269" column="52" selection-start-line="269" selection-start-column="52" selection-end-line="269" selection-end-column="52" />
-          <folding />
+          <folding>
+            <element signature="e#0#12121#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2690#2691#0" expanded="false" />
+            <element signature="e#2732#2733#0" expanded="false" />
+            <element signature="e#3072#3073#0" expanded="false" />
+            <element signature="e#3113#3114#0" expanded="false" />
+            <element signature="e#3815#3816#0" expanded="false" />
+            <element signature="e#3872#3873#0" expanded="false" />
+            <element signature="e#3926#3927#0" expanded="false" />
+            <element signature="e#3985#3986#0" expanded="false" />
+            <element signature="e#7687#7688#0" expanded="false" />
+            <element signature="e#7727#7728#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2697,26 +2762,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="149" column="35" selection-start-line="149" selection-start-column="35" selection-end-line="149" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="e#0#91657#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5748#5749#0" expanded="false" />
+            <element signature="e#5789#5790#0" expanded="false" />
+            <element signature="e#14984#14985#0" expanded="false" />
+            <element signature="e#15035#15036#0" expanded="false" />
+            <element signature="e#15485#15486#0" expanded="false" />
+            <element signature="e#15509#15510#0" expanded="false" />
+            <element signature="e#16037#16038#0" expanded="false" />
+            <element signature="e#16098#16099#0" expanded="false" />
+            <element signature="e#19981#19982#0" expanded="false" />
+            <element signature="e#20025#20026#0" expanded="false" />
+            <element signature="e#21524#21525#0" expanded="false" />
+            <element signature="e#21572#21573#0" expanded="false" />
+            <element signature="e#21637#21638#0" expanded="false" />
+            <element signature="e#21680#21681#0" expanded="false" />
+            <element signature="e#21809#21810#0" expanded="false" />
+            <element signature="e#21891#21892#0" expanded="false" />
+            <element signature="e#22276#22277#0" expanded="false" />
+            <element signature="e#22362#22363#0" expanded="false" />
+            <element signature="e#22865#22866#0" expanded="false" />
+            <element signature="e#22951#22952#0" expanded="false" />
+            <element signature="e#23348#23349#0" expanded="false" />
+            <element signature="e#23413#23414#0" expanded="false" />
+            <element signature="e#23487#23488#0" expanded="false" />
+            <element signature="e#23531#23532#0" expanded="false" />
+            <element signature="e#25054#25055#0" expanded="false" />
+            <element signature="e#25084#25085#0" expanded="false" />
+            <element signature="e#25647#25648#0" expanded="false" />
+            <element signature="e#25680#25681#0" expanded="false" />
+            <element signature="e#50545#50546#0" expanded="false" />
+            <element signature="e#50599#50600#0" expanded="false" />
+            <element signature="e#50653#50654#0" expanded="false" />
+            <element signature="e#50704#50705#0" expanded="false" />
+            <element signature="e#81051#81052#0" expanded="false" />
+            <element signature="e#81086#81087#0" expanded="false" />
+            <element signature="e#81626#81627#0" expanded="false" />
+            <element signature="e#81678#81679#0" expanded="false" />
+            <element signature="e#82012#82013#0" expanded="false" />
+            <element signature="e#82073#82074#0" expanded="false" />
+            <element signature="e#82114#82115#0" expanded="false" />
+            <element signature="e#82166#82167#0" expanded="false" />
+            <element signature="e#91329#91330#0" expanded="false" />
+            <element signature="e#91356#91357#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_list_fragment.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65217394">
           <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/WebFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2736,14 +2845,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/web_fragment.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.275862">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/utils/ProblemListHelper.java">
@@ -2756,8 +2865,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/utils/Datas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57939917">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemsContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#674#675#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemListItemView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="13" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ui/MainListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67596567">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
           <folding />
         </state>
       </provider>
