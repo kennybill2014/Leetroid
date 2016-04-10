@@ -50,6 +50,10 @@ public class ProblemsContainer {
         return null;
     }
 
+    public ArrayList<Problem> getProblems() {
+        return mProblems;
+    }
+
     public void addProblemText(String text) {
         if (mProblemTexts != null) {
             mProblemTexts.add(text);

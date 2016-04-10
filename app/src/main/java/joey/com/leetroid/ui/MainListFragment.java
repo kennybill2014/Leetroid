@@ -101,7 +101,7 @@ public class MainListFragment extends Fragment {
             }
             Problem problem = ProblemsContainer.getInstance().getProblem(position);
             System.out.println("Position " + position + " Title " + problem.mTitle);
-            ((ProblemListItemView)convertView).setProblemAttributes(problem, mAdapter);
+            ((ProblemListItemView) convertView).setProblemAttributes(problem, mAdapter);
             return convertView;
         }
     }
