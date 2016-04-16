@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -80,12 +82,20 @@ public class SearchFrameActivity extends Activity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
-                TextView textView = new TextView(SearchFrameActivity.this);
-                convertView = textView;
+                View view = LayoutInflater.from(SearchFrameActivity.this).inflate(R.layout.suggestion_list_item, null);
+                convertView = view;
+                ViewHolder viewHolder = new ViewHolder();
+                viewHolder.textView = (TextView) view.findViewById(R.id.suggestion_id);
+                view.setTag(viewHolder);
             }
-            ((TextView) convertView).setText(mSuggestions.get(position));
+            ViewHolder viewHolder = (ViewHolder) convertView.getTag();
+            (viewHolder.textView).setText(mSuggestions.get(position));
             return convertView;
         }
+    }
+
+    public class ViewHolder {
+        public TextView textView;
     }
 
     private void searchProblems(String input) {
