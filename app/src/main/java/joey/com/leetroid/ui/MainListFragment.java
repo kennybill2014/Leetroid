@@ -63,8 +63,9 @@ public class MainListFragment extends Fragment {
         mUniversalSetList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Problem problem = ProblemsContainer.getInstance().getProblem(position);
                 Intent intent = new Intent(MainListFragment.this.getActivity(), ProblemActivity.class);
-                intent.putExtra("fileindex", position);
+                intent.putExtra("filetext", problem.mFileText);
                 startActivity(intent);
             }
         });

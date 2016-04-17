@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
+import android.text.TextUtils;
 import android.widget.TextView;
 
 public class ProblemActivity extends Activity {
@@ -20,13 +21,14 @@ public class ProblemActivity extends Activity {
         setContentView(R.layout.activity_problem);
 
         Intent intent = getIntent();
-        int fileIndex = intent.getIntExtra("fileindex", 0);
+        String fileText = intent.getStringExtra("filetext");
 
         mTitle = (TextView) findViewById(R.id.problem_title_text);
-
         mText = (TextView) findViewById(R.id.problem_text);
-        Spanned spannedCode = Html.fromHtml(ProblemsContainer.getInstance().getProblemText(fileIndex));
-        mText.setText(spannedCode);
+        if (!TextUtils.isEmpty(fileText)) {
+            Spanned spannedCode = Html.fromHtml(fileText);
+            mText.setText(spannedCode);
+        }
     }
 
     @Override

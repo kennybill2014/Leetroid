@@ -15,14 +15,13 @@ public class FileHelper {
 
     private Context mContext;
 
-    private Resources mResouces;
+    private Resources mResources;
 
     private String mPackageName;
 
-
     public FileHelper(Context context) {
         mContext = context;
-        mResouces = mContext.getResources();
+        mResources = mContext.getResources();
         mPackageName = mContext.getPackageName();
     }
 
@@ -30,10 +29,9 @@ public class FileHelper {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Resources res = mContext.getResources();
                 BufferedReader input;
-                for (int i = 0; i < 1; i++) { // 应该是mFileNames.length
-                    input = new BufferedReader(new InputStreamReader(res.openRawResource(mResouces.getIdentifier(Datas.mFileNames[i], "raw", mPackageName))));
+                for (int i = 0; i < 1; i++) { // Should be mFileNames.length
+                    input = new BufferedReader(new InputStreamReader(mResources.openRawResource(mResources.getIdentifier(Datas.mFileNames[i], "raw", mPackageName))));
                     StringBuffer sb = new StringBuffer();
                     try {
                         String line;
@@ -50,7 +48,7 @@ public class FileHelper {
                         }
                     }
                     if (sb.length() > 0) {
-                        ProblemsContainer.getInstance().addProblemText(sb.toString());
+                        ProblemsContainer.getInstance().getProblem(i).mFileText = sb.toString();
                         sb = null;
                     }
                 }

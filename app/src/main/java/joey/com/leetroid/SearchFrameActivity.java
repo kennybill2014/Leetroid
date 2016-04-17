@@ -1,12 +1,14 @@
 package joey.com.leetroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -23,7 +25,7 @@ public class SearchFrameActivity extends Activity {
 
     private EditText mEditText;
 
-    private ArrayList<String> mSuggestions = new ArrayList<String> ();
+    private ArrayList<Problem> mSuggestions = new ArrayList<Problem> ();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,16 @@ public class SearchFrameActivity extends Activity {
         mSuggestionAdapter = new SuggestionAdapter();
         mSuggestionListView = (ListView) findViewById(R.id.suggestion_listview);
         mSuggestionListView.setAdapter(mSuggestionAdapter);
+        mSuggestionListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Problem problem = mSuggestions.get(position);
+                Intent intent = new Intent(SearchFrameActivity.this, ProblemActivity.class);
+                intent.putExtra("filetext", problem.mFileText);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     @Override
@@ -89,7 +101,7 @@ public class SearchFrameActivity extends Activity {
                 view.setTag(viewHolder);
             }
             ViewHolder viewHolder = (ViewHolder) convertView.getTag();
-            (viewHolder.textView).setText(mSuggestions.get(position));
+            (viewHolder.textView).setText(mSuggestions.get(position).mTitle);
             return convertView;
         }
     }
@@ -103,7 +115,7 @@ public class SearchFrameActivity extends Activity {
         mSuggestions.clear();
         for (int i = 0; i < problems.size(); i++) {
             if (problems.get(i).mTitle.toLowerCase().contains(input.toLowerCase())) {
-                mSuggestions.add(problems.get(i).mTitle);
+                mSuggestions.add(problems.get(i));
             }
         }
     }

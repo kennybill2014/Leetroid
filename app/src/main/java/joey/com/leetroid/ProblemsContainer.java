@@ -2,6 +2,8 @@ package joey.com.leetroid;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 
 // :syntax on
 // :colorscheme desert
@@ -11,7 +13,6 @@ import java.util.Collections;
 public class ProblemsContainer {
 
     private ArrayList<Problem> mProblems = new ArrayList<Problem>();
-    private ArrayList<String> mProblemTexts = new ArrayList<String>();
 
     private static ProblemsContainer sInstance;
 
@@ -54,25 +55,28 @@ public class ProblemsContainer {
         return mProblems;
     }
 
-    public void addProblemText(String text) {
-        if (mProblemTexts != null) {
-            mProblemTexts.add(text);
-        }
-    }
-
-    public String getProblemText(int position) {
-        if (mProblemTexts != null && position < mProblemTexts.size()) {
-            return mProblemTexts.get(position);
-        }
-        return null;
-    }
-
+    /**
+     * 更新问题列表
+     */
     public void refreshProblemList() {
-        for (int i = mProblems.size() - 1; i >= 1; i--) {
-            if (mProblems.get(i).mIsStared && !mProblems.get(i - 1).mIsStared) {
-                Collections.swap(mProblems, i, i - 1);
+        Collections.sort(mProblems, new Comparator<Problem>() {
+            @Override
+            public int compare(Problem lhs, Problem rhs) {
+                if (lhs.mIsStared) {
+                    if (rhs.mIsStared) {
+                        return lhs.mIndex - rhs.mIndex;
+                    } else {
+                        return -1;
+                    }
+                } else {
+                    if (rhs.mIsStared) {
+                        return 1;
+                    } else {
+                        return lhs.mIndex - rhs.mIndex;
+                    }
+                }
             }
-        }
+        });
     }
 
 }

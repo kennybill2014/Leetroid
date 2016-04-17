@@ -22,7 +22,6 @@ public class MainActivity extends FragmentActivity {
     public static final String TAB_ONE_TAG = "tab1";
     public static final String TAB_TWO_TAG = "tab2";
     private FragmentTabHost mFragmentTabHost;
-    private FileHelper mFileHelper;
     private ProblemListHelper mProblemListHelper;
 
     @Override
@@ -30,13 +29,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initProblems();
-        initProblemTexts();
         initView();
-    }
-
-    private void initProblemTexts() {
-        mFileHelper = new FileHelper(this.getApplicationContext());
-        mFileHelper.startRead();
     }
 
     private void initProblems() {
