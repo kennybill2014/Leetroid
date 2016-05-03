@@ -38,7 +38,7 @@ public class SplashManager {
     }
 
     private void addSplashViewPage() {
-        mRootView.setBackgroundColor(Color.parseColor("#F0FFF0"));
+        mRootView.setBackgroundColor(Color.parseColor("#FFD1EEEE"));
 
         WindowManager windowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         WindowManager.LayoutParams windowManagerParams = new WindowManager.LayoutParams();
@@ -67,7 +67,7 @@ public class SplashManager {
                     mSplashThread = null;
                     mRootView = null;
                 }
-            }, 2000);
+            }, 3000);
         }
     }
 
