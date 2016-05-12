@@ -14,6 +14,8 @@ public class ProblemListItemView extends RelativeLayout implements View.OnClickL
 
     private boolean isStared;
 
+    private RelativeLayout mImageWrapper;
+
     private ImageView mImageView;
 
     private TextView mTitleView;
@@ -46,10 +48,12 @@ public class ProblemListItemView extends RelativeLayout implements View.OnClickL
     }
 
     private void init() {
+        mImageWrapper = (RelativeLayout) findViewById(R.id.problem_region_star_wrapper);
         mImageView = (ImageView) findViewById(R.id.problem_region_star);
         mTitleView = (TextView) findViewById(R.id.problem_region_title);
         mDifficultyView = (TextView) findViewById(R.id.problem_region_difficulty);
         mImageView.setOnClickListener(this);
+        mImageWrapper.setOnClickListener(this);
         //setOnClickListener(this);
     }
 
@@ -68,7 +72,7 @@ public class ProblemListItemView extends RelativeLayout implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        if (v == mImageView) {
+        if (v == mImageView || v == mImageWrapper) {
             if (mProblem.mIsStared) {
                 mProblem.mIsStared = false;
                 mImageView.setBackgroundResource(R.mipmap.unstarred);
