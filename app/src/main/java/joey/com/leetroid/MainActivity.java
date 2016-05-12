@@ -23,10 +23,13 @@ public class MainActivity extends FragmentActivity {
     public static final String TAB_TWO_TAG = "tab2";
     private FragmentTabHost mFragmentTabHost;
     private ProblemListHelper mProblemListHelper;
+    private SplashManager mSplashManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mSplashManager = new SplashManager(this);
+        mSplashManager.begin();
         setContentView(R.layout.activity_main);
         initProblems();
         initView();
