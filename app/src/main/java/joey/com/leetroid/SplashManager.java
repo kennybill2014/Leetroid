@@ -79,7 +79,7 @@ public class SplashManager {
                     mSplashThread = null;
                     mRootView = null;
                 }
-            }, 10000);
+            }, 3000);
         }
     }
 

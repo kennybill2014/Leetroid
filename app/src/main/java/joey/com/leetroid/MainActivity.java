@@ -19,8 +19,10 @@ import joey.com.leetroid.utils.ProblemListHelper;
 
 public class MainActivity extends FragmentActivity {
 
-    public static final String TAB_ONE_TAG = "tab1";
-    public static final String TAB_TWO_TAG = "tab2";
+    public static final String TAB_MAIN_TAG = "main";
+    public static final String TAB_WEB_TAG = "web";
+    private TabHost.TabSpec mMainTab;
+    private TabHost.TabSpec mWebTab;
     private FragmentTabHost mFragmentTabHost;
     private ProblemListHelper mProblemListHelper;
     private SplashManager mSplashManager;
@@ -41,15 +43,37 @@ public class MainActivity extends FragmentActivity {
     }
 
     private void initView() {
-        System.out.println("Init Views in MainActivity");
         mFragmentTabHost = (FragmentTabHost) findViewById(R.id.tab_host);
         mFragmentTabHost.setup(this, getSupportFragmentManager(), R.id.frame_container);
 
-        mFragmentTabHost.addTab(getIndicator(MainActivity.this, mFragmentTabHost.newTabSpec(TAB_ONE_TAG), "#363636",
-                "MainList", R.mipmap.ic_launcher), MainListContainerFragment.class, null);
-        mFragmentTabHost.addTab(getIndicator(MainActivity.this, mFragmentTabHost.newTabSpec(TAB_TWO_TAG), "#363636",
-                "Web", R.mipmap.ic_launcher), WebContainerFragment.class, null);
+        mMainTab = getIndicator(MainActivity.this, mFragmentTabHost.newTabSpec(TAB_MAIN_TAG), "#363636",
+                "MainList", R.mipmap.ic_launcher);
+        mWebTab = getIndicator(MainActivity.this, mFragmentTabHost.newTabSpec(TAB_WEB_TAG), "#363636",
+                "Web", R.mipmap.ic_launcher);
+
+        mFragmentTabHost.addTab(mMainTab, MainListContainerFragment.class, null);
+        mFragmentTabHost.addTab(mWebTab, WebContainerFragment.class, null);
         mFragmentTabHost.getTabWidget().setDividerDrawable(null); // Remove the divider
+        mFragmentTabHost.getCurrentTabView().setBackgroundColor(Color.parseColor("#1E1E1E"));
+        mFragmentTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String tabId) {
+                switch (tabId) {
+                    case "main":
+                        mFragmentTabHost.getTabWidget().getChildTabViewAt(0)
+                                .setBackgroundColor(Color.parseColor("#1E1E1E"));
+                        mFragmentTabHost.getTabWidget().getChildTabViewAt(1)
+                                .setBackgroundColor(Color.parseColor("#363636"));
+                        break;
+                    case "web":
+                        mFragmentTabHost.getTabWidget().getChildTabViewAt(1)
+                                .setBackgroundColor(Color.parseColor("#1E1E1E"));
+                        mFragmentTabHost.getTabWidget().getChildTabViewAt(0)
+                                .setBackgroundColor(Color.parseColor("#363636"));
+                        break;
+                }
+            }
+        });
     }
 
     private TabHost.TabSpec getIndicator(Context context, TabHost.TabSpec spec,
@@ -60,6 +84,7 @@ public class MainActivity extends FragmentActivity {
 
         v.setBackgroundColor(Color.parseColor(color));
         tabText.setText(str);
+        tabText.setTextColor(Color.WHITE);
         tabImage.setBackgroundResource(genResIcon);
 
         return spec.setIndicator(v);
