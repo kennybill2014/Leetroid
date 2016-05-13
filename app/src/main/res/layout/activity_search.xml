@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
+
     <RelativeLayout
         android:id="@+id/search_region"
         android:background="@drawable/search_region_round_shape"
@@ -10,16 +11,6 @@
         android:layout_marginRight="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/search_region_icon"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:scaleType="fitXY"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:src="@mipmap/search_icon"
-            >
-        </ImageView>
         <Button
             android:id="@+id/search_region_button"
             android:background="@drawable/search_region_button_round_shape"
@@ -29,17 +20,18 @@
             android:text="Search"
             android:textSize="16dp"
             android:textColor="#ffffff"
+            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             >
         </Button>
         <EditText
             android:id="@+id/search_region_edit"
-            android:layout_toRightOf="@id/search_region_icon"
             android:layout_toLeftOf="@id/search_region_button"
-            android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
             android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/searchbox"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_below="@id/search_region"
@@ -47,6 +39,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
+        android:background="@drawable/search_region_round_shape"
         >
         <ListView
             android:id="@+id/suggestion_listview"

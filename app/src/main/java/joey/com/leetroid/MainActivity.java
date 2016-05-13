@@ -47,9 +47,9 @@ public class MainActivity extends FragmentActivity {
         mFragmentTabHost.setup(this, getSupportFragmentManager(), R.id.frame_container);
 
         mMainTab = getIndicator(MainActivity.this, mFragmentTabHost.newTabSpec(TAB_MAIN_TAG), "#363636",
-                "MainList", R.mipmap.ic_launcher);
+                "Solution", R.mipmap.ic_launcher);
         mWebTab = getIndicator(MainActivity.this, mFragmentTabHost.newTabSpec(TAB_WEB_TAG), "#363636",
-                "Web", R.mipmap.ic_launcher);
+                "Discussion", R.mipmap.ic_launcher);
 
         mFragmentTabHost.addTab(mMainTab, MainListContainerFragment.class, null);
         mFragmentTabHost.addTab(mWebTab, WebContainerFragment.class, null);

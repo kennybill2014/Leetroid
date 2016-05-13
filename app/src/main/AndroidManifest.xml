@@ -23,7 +23,9 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
-        <activity android:name=".SearchFrameActivity">
+        <activity
+            android:name=".SearchFrameActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
