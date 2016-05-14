@@ -42,6 +42,10 @@ public class MainActivity extends FragmentActivity {
         mProblemListHelper.startBuild();
     }
 
+    private void storeProblemStatus() {
+        mProblemListHelper.storeStatus();
+    }
+
     private void initView() {
         mFragmentTabHost = (FragmentTabHost) findViewById(R.id.tab_host);
         mFragmentTabHost.setup(this, getSupportFragmentManager(), R.id.frame_container);
@@ -93,6 +97,7 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        storeProblemStatus();
         ProblemsContainer.releaseInstance();
     }
 

@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import joey.com.leetroid.ui.MainListFragment.ProblemListAdapter;
+import joey.com.leetroid.utils.ProblemDataBaseHelper;
 
 
 public class ProblemListItemView extends RelativeLayout implements View.OnClickListener {
@@ -25,6 +26,8 @@ public class ProblemListItemView extends RelativeLayout implements View.OnClickL
     private Problem mProblem;
 
     private ProblemListAdapter mAdapter;
+
+    private ProblemDataBaseHelper mProblemDatabaseHelper;
 
     public ProblemListItemView(Context context) {
         super(context);
