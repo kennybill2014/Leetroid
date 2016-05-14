@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import joey.com.leetroid.ui.MainListFragment.ProblemListAdapter;
 import joey.com.leetroid.utils.ProblemDataBaseHelper;
@@ -14,6 +15,8 @@ import joey.com.leetroid.utils.ProblemDataBaseHelper;
 public class ProblemListItemView extends RelativeLayout implements View.OnClickListener {
 
     private boolean isStared;
+
+    private Context mContext;
 
     private RelativeLayout mImageWrapper;
 
@@ -27,20 +30,21 @@ public class ProblemListItemView extends RelativeLayout implements View.OnClickL
 
     private ProblemListAdapter mAdapter;
 
-    private ProblemDataBaseHelper mProblemDatabaseHelper;
-
     public ProblemListItemView(Context context) {
         super(context);
+        mContext = context;
         //init(context);
     }
 
     public ProblemListItemView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        mContext = context;
         //init(context);
     }
 
     public ProblemListItemView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        mContext = context;
         //init(context);
     }
 
@@ -81,12 +85,15 @@ public class ProblemListItemView extends RelativeLayout implements View.OnClickL
                 mImageView.setBackgroundResource(R.mipmap.unstarred);
                 ProblemsContainer.getInstance().refreshProblemList();
                 mAdapter.notifyDataSetChanged();
+                Toast.makeText(mContext, "Unstar!", Toast.LENGTH_SHORT).show();
             } else {
                 mProblem.mIsStared = true;
                 mImageView.setBackgroundResource(R.mipmap.starred);
                 ProblemsContainer.getInstance().refreshProblemList();
                 mAdapter.notifyDataSetChanged();
+                Toast.makeText(mContext, "Star!", Toast.LENGTH_SHORT).show();
             }
+
         }
     }
 
