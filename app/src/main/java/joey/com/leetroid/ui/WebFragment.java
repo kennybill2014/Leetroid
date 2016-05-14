@@ -13,15 +13,23 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import joey.com.leetroid.R;
 
-public class WebFragment extends Fragment {
+public class WebFragment extends Fragment implements View.OnClickListener {
 
     private View mRootView;
 
     private WebView mWebView;
+
+    private Button mBackButton;
+
+    private Button mRefreshButton;
+
+    private Button mForwardButton;
 
     @Nullable
     @Override
@@ -42,8 +50,14 @@ public class WebFragment extends Fragment {
     }
 
     private void initWebView(View view) {
-        mWebView = (WebView) view.findViewById(R.id.webview);
+        mBackButton = (Button) view.findViewById(R.id.back);
+        mRefreshButton = (Button) view.findViewById(R.id.refresh);
+        mForwardButton = (Button) view.findViewById(R.id.forward);
+        mBackButton.setOnClickListener(this);
+        mRefreshButton.setOnClickListener(this);
+        mForwardButton.setOnClickListener(this);
 
+        mWebView = (WebView) view.findViewById(R.id.webview);
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setLoadWithOverviewMode(true);
         webSettings.setUseWideViewPort(true);
@@ -56,6 +70,25 @@ public class WebFragment extends Fragment {
         mWebView.setWebChromeClient(new LeetWebChromeClient());
 
         mWebView.loadUrl("https://leetcode.com/discuss/");
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.back:
+                if (mWebView.canGoBack()) {
+                    mWebView.goBack();
+                }
+                break;
+            case R.id.refresh:
+                mWebView.reload();
+                break;
+            case R.id.forward:
+                if (mWebView.canGoForward()) {
+                    mWebView.goForward();
+                }
+                break;
+        }
     }
 
     public class LeetWebViewClient extends WebViewClient {

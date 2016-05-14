@@ -35,4 +35,40 @@
         </WebView>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff">
+        <Button
+            android:id="@+id/back"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:scaleType="fitXY"
+            android:background="@mipmap/back"
+            >
+        </Button>
+        <Button
+            android:id="@+id/forward"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:scaleType="fitXY"
+            android:background="@mipmap/forward"
+            >
+        </Button>
+        <Button
+            android:id="@+id/refresh"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:background="@mipmap/refresh"
+            >
+        </Button>
+    </RelativeLayout>
+
 </RelativeLayout>
