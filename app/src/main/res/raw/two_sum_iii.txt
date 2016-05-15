@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<font face="monospace">
+<font color="#ffff00"><b>Question</b></font>:<br>
+Design&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;implement a TwoSum&nbsp;<font color="#00ff00"><b>class</b></font>. It should support the following operations: add&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;find.<br>
+add(input) – Add the number input to an internal data structure.<br>
+find(value) – Find&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;there exists any pair of numbers which sum is equal to the value.<br>
+For example,<br>
+add(<font color="#ff40ff"><b>1</b></font>); add(<font color="#ff40ff"><b>3</b></font>); add(<font color="#ff40ff"><b>5</b></font>); find(<font color="#ff40ff"><b>4</b></font>)-&gt;<font color="#ff40ff"><b>true</b></font>; find(<font color="#ff40ff"><b>7</b></font>)-&gt;<font color="#ff40ff"><b>false</b></font><br>
+<br>
+<font color="#ffff00"><b>Solution</b></font>:<br>
+add – O(n) runtime, find – O(<font color="#ff40ff"><b>1</b></font>) runtime, O(n2) space – Store pair sums in hash table:<br>
+We could store all possible pair sums into a hash table. The extra space needed is in the order of O(n2). You would also need an extra O(n) space to store the list of added numbers. Each add operation essentially go through the list&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;form&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;pair sums that go into the hash table. The find operation involves a single hash table lookup in O(<font color="#ff40ff"><b>1</b></font>) runtime.<br>
+This method is useful&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;the number of find operations far exceeds the number of add operations.<br>
+<br>
+add – O(log n) runtime, find – O(n) runtime, O(n) space – Binary search + Two pointers:<br>
+Maintain a sorted array of numbers. Each add operation would need O(log n) time to insert it at the correct position&nbsp;<font color="#ffff00"><b>using</b></font>&nbsp;a modified binary search (See Question [<font color="#ff40ff"><b>48.</b></font>&nbsp;Search Insert Position]). For find operation we could then apply the [Two pointers] approach in O(n) runtime.<br>
+<br>
+add – O(<font color="#ff40ff"><b>1</b></font>) runtime, find – O(n) runtime, O(n) space – Store input in hash table:<br>
+A simpler approach is to store each input into a hash table. To find&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;a pair sum exists, just iterate through the hash table in O(n) runtime. Make sure you are able to handle duplicates correctly.<br>
+<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>class</b></font>&nbsp;TwoSum {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>private</b></font>&nbsp;Map&lt;Integer, Integer&gt; table =&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;HashMap&lt;&gt;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>void</b></font>&nbsp;add(<font color="#00ff00"><b>int</b></font>&nbsp;input) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;count = table.containsKey(input) ? table.get(input) :&nbsp;<font color="#ff40ff"><b>0</b></font>&nbsp;&nbsp;&nbsp;&nbsp; ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.put(input, count +&nbsp;<font color="#ff40ff"><b>1</b></font>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>public</b></font>&nbsp;boolean find(<font color="#00ff00"><b>int</b></font>&nbsp;val) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>for</b></font>&nbsp;(Map.Entry&lt;Integer, Integer&gt; entry : table.entrySet()) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;num = entry.getKey();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;y = val - num;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(y == num) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(entry.getValue() &gt;=&nbsp;<font color="#ff40ff"><b>2</b></font>)&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;<font color="#ff40ff"><b>true</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<font color="#ffff00"><b>else</b></font>&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(table.containsKey(y)) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;<font color="#ff40ff"><b>true</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;<font color="#ff40ff"><b>false</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br>
+</font>

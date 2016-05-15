@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<font face="monospace">
+<font color="#ffff00"><b>Question</b></font>:<br>
+Implement strstr().<br>
+<font color="#ffff00"><b>Solution</b></font>:<br>
+O(nm) runtime, O(<font color="#ff40ff"><b>1</b></font>) space – Brute force:<br>
+<font color="#ffff00"><b>Difficulty</b></font>:&nbsp;Easy, Frequency: High<br>
+There are known efficient algorithms such as Rabin-Karp algorithm, KMP algorithm,&nbsp;<font color="#ffff00"><b>or</b></font>&nbsp;the Boyer-Moore algorithm. Since these algorithms are usually studied in an advanced algorithms&nbsp;<font color="#00ff00"><b>class</b></font>, it is sufficient to solve it&nbsp;<font color="#ffff00"><b>using</b></font>&nbsp;the most direct method in an interview – The brute force method.<br>
+<br>
+The brute force method is straightforward to implement. We scan the needle with the haystack from its first position&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;start matching all subsequent letters one by one. If one of the letters does&nbsp;<font color="#ffff00"><b>not</b></font>&nbsp;match, we start over again with the next position in the haystack.<br>
+Assume that n = length of haystack&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;m = length of needle, then the runtime complexity is O(nm).<br>
+Have you considered these scenarios?<br>
+(<font color="#ff40ff"><b>1</b></font>) a needle&nbsp;<font color="#ffff00"><b>or</b></font>&nbsp;haystack is empty. If needle is empty, always&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;<font color="#ff40ff"><b>0.</b></font>&nbsp;If haystack is empty, then there will always be no match (<font color="#ffff00"><b>return</b></font>&nbsp;–<font color="#ff40ff"><b>1</b></font>) unless needle is also empty which&nbsp;<font color="#ff40ff"><b>0</b></font>&nbsp;is returned.<br>
+(<font color="#ff40ff"><b>2</b></font>) needle’s length is greater than haystack’s length. Should always&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;–<font color="#ff40ff"><b>1.</b></font>&nbsp;needle is located at the end of haystack. For example, “aaaba”&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;“ba”.&nbsp;<br>
+(<font color="#ff40ff"><b>3</b></font>) needle occur multiple times in haystack. For example, “mississippi”&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;“issi”. It should&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;index&nbsp;<font color="#ff40ff"><b>2</b></font>&nbsp;as the first match of “issi”.<br>
+(<font color="#ff40ff"><b>4</b></font>) Imagine two very&nbsp;<font color="#00ff00"><b>long</b></font>&nbsp;strings of equal lengths = n, haystack = “aaa...aa”&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;needle = “aaa...ab”. You should&nbsp;<font color="#ffff00"><b>not</b></font>&nbsp;<font color="#ffff00"><b>do</b></font>&nbsp;more than n character comparisons,&nbsp;<font color="#ffff00"><b>or</b></font>&nbsp;<font color="#ffff00"><b>else</b></font>&nbsp;your code will get Time Limit Exceeded in OJ.<br>
+<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;strStr(String haystack, String needle) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>for</b></font>&nbsp;(<font color="#00ff00"><b>int</b></font>&nbsp;i =&nbsp;<font color="#ff40ff"><b>0</b></font>; ;i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>for</b></font>&nbsp;(<font color="#00ff00"><b>int</b></font>&nbsp;j =&nbsp;<font color="#ff40ff"><b>0</b></font>; ;j++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(j == needle.length())&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(i + j == haystack.length())&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;-<font color="#ff40ff"><b>1</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(haystack.charAt(i + j) != needle.charAt(j))&nbsp;<font color="#ffff00"><b>break</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br>
+</font>

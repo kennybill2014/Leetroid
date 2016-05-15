@@ -5,10 +5,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 
+// vim *.cpp
 // :syntax on
-// :colorscheme desert
+// :colorscheme evening
 // :let html_use_css=0
 // :TOhtml
+// Remove header and meta
+// Copy the content to *.txt
 
 public class ProblemsContainer {
 

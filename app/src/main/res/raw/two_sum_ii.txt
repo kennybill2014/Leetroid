@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<font face="monospace">
+<font color="#ffff00"><b>Question</b></font>:<br>
+Similar to Question [<font color="#ff40ff"><b>1.</b></font>&nbsp;Two Sum], except that the input array is already sorted in ascending order.<br>
+<br>
+<font color="#ffff00"><b>Solution</b></font>:<br>
+Of course we could still apply the [Hash table] approach, but it costs us O(n) extra space, plus it does&nbsp;<font color="#ffff00"><b>not</b></font>&nbsp;make use of the fact that the input is already sorted.<br>
+O(n log n) runtime, O(<font color="#ff40ff"><b>1</b></font>) space – Binary search:<br>
+For each element x, we could look up&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;target – x exists in O(log n) time by applying<br>
+binary search over the sorted array. Total runtime complexity is O(n log n).<br>
+<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>int</b></font>[] twoSum(<font color="#00ff00"><b>int</b></font>[] numbers,&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;target) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>for</b></font>&nbsp;(<font color="#00ff00"><b>int</b></font>&nbsp;i =&nbsp;<font color="#ff40ff"><b>0</b></font>; i &lt; numbers.length; i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;j = bsearch(numbers, target - numbers[i], i+<font color="#ff40ff"><b>1</b></font>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(j != -<font color="#ff40ff"><b>1</b></font>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;<font color="#00ff00"><b>int</b></font>[] {i, j};<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>throw</b></font>&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;IllegalArgumentException(<font color="#ff40ff"><b>&quot;No two sum solution&quot;</b></font>);<br>
+}<br>
+<br>
+<font color="#ffff00"><b>private</b></font>&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;bsearch(<font color="#00ff00"><b>int</b></font>[] A,&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;key,&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;start) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;L = start, R = A.length -&nbsp;<font color="#ff40ff"><b>1</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>while</b></font>&nbsp;(L &lt; R) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;M = (L + R) /<font color="#ff40ff"><b>2</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(A[M] &lt; key) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L = M +&nbsp;<font color="#ff40ff"><b>1</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<font color="#ffff00"><b>else</b></font>&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R = M;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;(L == R &amp;&amp; A[L] == key) ? L : -<font color="#ff40ff"><b>1</b></font>;<br>
+}<br>
+<br>
+O(n) runtime, O(<font color="#ff40ff"><b>1</b></font>) space – Two pointers:<br>
+Let’s assume we have two indices pointing to the ith&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;jth elements, Ai&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;Aj<br>
+respectively. The sum of Ai&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;Aj could only fall into one of these three possibilities:<br>
+i. Ai + Aj &gt; target. Increasing i isn’t going to help us, as it makes the sum even<br>
+bigger. Therefore we should decrement j.<br>
+ii. Ai + Aj &lt; target. Decreasing j isn’t going to help us, as it makes the sum even<br>
+smaller. Therefore we should increment i.<br>
+iii. Ai + Aj == target. We have found the answer.<br>
+<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>int</b></font>[] twoSum(<font color="#00ff00"><b>int</b></font>[] numbers,&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;target) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;i =&nbsp;<font color="#ff40ff"><b>0</b></font>, j = numbers.length -&nbsp;<font color="#ff40ff"><b>1</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>while</b></font>&nbsp;(i &lt; j) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;sum = numbers[i] + numbers[j];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(sum &lt; target) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<font color="#ffff00"><b>else</b></font>&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(sum &gt; target) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j--;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<font color="#ffff00"><b>else</b></font>&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;<font color="#00ff00"><b>int</b></font>[] {i +&nbsp;<font color="#ff40ff"><b>1</b></font>, j +&nbsp;<font color="#ff40ff"><b>1</b></font>};<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>throw</b></font>&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;IllegalArgumentException(<font color="#ff40ff"><b>&quot;No two sum solution&quot;</b></font>);<br>
+}<br>
+</font>
