@@ -81,7 +81,6 @@ public class MainListFragment extends Fragment {
 
         @Override
         public int getCount() {
-            System.out.println("Get count ");
             return ProblemsContainer.getInstance().getSize();
         }
 

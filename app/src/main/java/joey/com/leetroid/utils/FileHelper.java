@@ -25,12 +25,12 @@ public class FileHelper {
         mPackageName = mContext.getPackageName();
     }
 
-    public void startRead() {
+    public void startRead(final FileReadListener fileReadListener) {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 BufferedReader input;
-                for (int i = 0; i < 7; i++) { // Should be mFileNames.length
+                for (int i = 0; i < 7; i++) { // Should be mFileNames.length, bug here, should
                     input = new BufferedReader(new InputStreamReader(mResources.openRawResource(mResources.getIdentifier(Datas.mFileNames[i], "raw", mPackageName))));
                     StringBuffer sb = new StringBuffer();
                     try {
@@ -52,8 +52,12 @@ public class FileHelper {
                         sb = null;
                     }
                 }
+                fileReadListener.onComplete();
             }
         }).start();
     }
 
+    public interface FileReadListener {
+        public void onComplete();
+    }
 }

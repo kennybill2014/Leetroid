@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import joey.com.leetroid.Problem;
 import joey.com.leetroid.ProblemsContainer;
 
-public class ProblemListHelper {
+public class ProblemListHelper implements FileHelper.FileReadListener {
 
     private Context mContext;
 
@@ -40,8 +40,7 @@ public class ProblemListHelper {
                     ProblemsContainer.getInstance().addProblem(problem);
                 }
             }
-            ProblemsContainer.getInstance().refreshProblemList();
-            mFileHelper.startRead();
+            mFileHelper.startRead(this);
         }
     }
 
@@ -53,5 +52,10 @@ public class ProblemListHelper {
                 mProblemDataBaseHelper.updateStatusDatabase(problem.mIndex, problem.mTitle, problem.mIsStared ? 1 : 0);
             }
         }
+    }
+
+    @Override
+    public void onComplete() {
+        ProblemsContainer.getInstance().refreshProblemList();
     }
 }
