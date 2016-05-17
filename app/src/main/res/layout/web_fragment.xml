@@ -42,8 +42,8 @@
         android:background="#EEEEEE">
         <Button
             android:id="@+id/back"
-            android:layout_height="30dp"
-            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_width="35dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="40dp"
             android:scaleType="fitXY"
@@ -52,8 +52,8 @@
         </Button>
         <Button
             android:id="@+id/forward"
-            android:layout_height="30dp"
-            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_width="35dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="40dp"
             android:scaleType="fitXY"
@@ -62,8 +62,8 @@
         </Button>
         <Button
             android:id="@+id/refresh"
-            android:layout_height="30dp"
-            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_width="35dp"
             android:layout_centerHorizontal="true"
             android:scaleType="fitXY"
             android:background="@mipmap/refresh"
