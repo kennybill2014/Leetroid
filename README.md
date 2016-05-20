@@ -1,4 +1,4 @@
 # Leetroid
 An Android app showing answers and discussions to LeetCode problems
-Hope it finds you well
+Mostly in java, hope it finds you well
 
