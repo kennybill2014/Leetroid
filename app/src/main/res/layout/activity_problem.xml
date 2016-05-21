@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
             android:layout_centerInParent="true"
-            android:text="Solutions"
+            android:text="Problem"
             android:textSize="20dp"/>
     </RelativeLayout>
 
