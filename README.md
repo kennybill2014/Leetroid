@@ -16,19 +16,19 @@ Functions
 
 Demo
 ----
-Start the app.
+###Start the app
 ![Front](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/front.png)
 
-Showing the problem listi and star to mark the key problems.
+###Problem list
 ![Main](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/main.png)
 
-Click to see the solution to the problems.
+###Solutions to problems
 ![problem](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/problem.png)
 
-Enter search mode to quickly locate problem.
+###Search mode
 ![search](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/search.png)
 
-Switch to discussion tab to see other ways to solve problems.
+###Online discussion
 ![discussion](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/discussion.png)
 
  
