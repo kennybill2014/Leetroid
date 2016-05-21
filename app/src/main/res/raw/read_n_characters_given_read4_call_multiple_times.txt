@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="no_pre,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="elflord">
+
+<script type='text/javascript'>
+</script>
+</head>
+<body bgcolor="#000000" text="#ffffff">
+<font face="monospace">
+<font color="#ffff00"><b>Question</b></font>:<br>
+Similar to Question [<font color="#ff40ff"><b>15.</b></font>&nbsp;Read N Characters Given Read4], but the read function may be called multiple times.<br>
+<br>
+<font color="#ffff00"><b>Solution</b></font>:<br>
+This makes the problem a lot more complicated, because it can be called multiple times&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;involves storing states.<br>
+Therefore, we design the following&nbsp;<font color="#00ff00"><b>class</b></font>&nbsp;member variables to store the states:<br>
+i. buffer – An array of size&nbsp;<font color="#ff40ff"><b>4</b></font>&nbsp;use to store data returned by read4 temporarily. If the characters were read into the buffer&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;were&nbsp;<font color="#ff6060"><b>not</b></font>&nbsp;used partially, they will be used in the next call.<br>
+ii. offset – Use to keep track of the offset index where the data begins in the next read call. The buffer could be read partially (due to constraints of reading up to n bytes)&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;therefore leaving some data behind.<br>
+iii. bufsize – The real buffer size that stores the actual data. If bufsize &gt;&nbsp;<font color="#ff40ff"><b>0</b></font>, that means there is partial data left in buffer from the last read call&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;we should consume it before calling read4 again. On the other hand,&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;bufsize ==&nbsp;<font color="#ff40ff"><b>0</b></font>, it means there is no data left in buffer.<br>
+<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>class</b></font>&nbsp;Solution extends Reader4 {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>private</b></font>&nbsp;<font color="#00ff00"><b>char</b></font>[] buffer =&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;<font color="#00ff00"><b>char</b></font>[<font color="#ff40ff"><b>4</b></font>];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;offset =&nbsp;<font color="#ff40ff"><b>0</b></font>, bufsize =&nbsp;<font color="#ff40ff"><b>0</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ffff">/*</font><font color="#00ffff">*</font><br>
+<font color="#00ffff">&nbsp;&nbsp;&nbsp;&nbsp;* @param buf Destination buffer</font><br>
+<font color="#00ffff">&nbsp;&nbsp;&nbsp;&nbsp;* @param n&nbsp;&nbsp; Maximum number of characters to read</font><br>
+<font color="#00ffff">&nbsp;&nbsp;&nbsp;&nbsp;* @return&nbsp;&nbsp;&nbsp;&nbsp;The number of characters read</font><br>
+<font color="#00ffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#00ffff">*/</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;read(<font color="#00ff00"><b>char</b></font>[] buf,&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;n) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;readBytes =&nbsp;<font color="#ff40ff"><b>0</b></font>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean eof =&nbsp;<font color="#ff40ff"><b>false</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;(!eof &amp;&amp; readBytes &lt; n) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;sz = (bufsize &gt;&nbsp;<font color="#ff40ff"><b>0</b></font>) ? bufsize : read4(buffer);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(bufsize ==&nbsp;<font color="#ff40ff"><b>0</b></font>&nbsp;&amp;&amp; sz &lt;&nbsp;<font color="#ff40ff"><b>4</b></font>) eof =&nbsp;<font color="#ff40ff"><b>true</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;bytes = Math.min(n - readBytes, sz);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.arraycopy(buffer, offset, buf, readBytes, bytes);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;offset = (offset + bytes) %&nbsp;<font color="#ff40ff"><b>4</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bufsize = sz - bytes;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;readBytes += bytes;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;readBytes;<br>
+&nbsp;&nbsp; }<br>
+}<br>
+</font>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

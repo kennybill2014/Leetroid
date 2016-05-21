@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="no_pre,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="elflord">
+
+<script type='text/javascript'>
+</script>
+</head>
+<body bgcolor="#000000" text="#ffffff">
+<font face="monospace">
+<font color="#ffff00"><b>Question</b></font>:<br>
+Given a sorted integer array where the range of elements are [<font color="#ff40ff"><b>0</b></font>,&nbsp;<font color="#ff40ff"><b>99</b></font>] inclusive,&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;its missing ranges.<br>
+For example, given [<font color="#ff40ff"><b>0</b></font>,&nbsp;<font color="#ff40ff"><b>1</b></font>,&nbsp;<font color="#ff40ff"><b>3</b></font>,&nbsp;<font color="#ff40ff"><b>50</b></font>,&nbsp;<font color="#ff40ff"><b>75</b></font>],&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;[“<font color="#ff40ff"><b>2</b></font>”, “<font color="#ff40ff"><b>4</b></font>-&gt;<font color="#ff40ff"><b>49</b></font>”, “<font color="#ff40ff"><b>51</b></font>-&gt;<font color="#ff40ff"><b>74</b></font>”, “<font color="#ff40ff"><b>76</b></font>-&gt;<font color="#ff40ff"><b>99</b></font>”]<br>
+Example Questions Candidate Might Ask:<br>
+<font color="#ffff00"><b>Q</b></font>:&nbsp;What&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;the given array is empty?<br>
+<font color="#ffff00"><b>A</b></font>:&nbsp;Then you should&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;[“<font color="#ff40ff"><b>0</b></font>-&gt;<font color="#ff40ff"><b>99</b></font>”] as those ranges are missing.<br>
+<font color="#ffff00"><b>Q</b></font>:&nbsp;What&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;the given array contains all elements from the ranges? A: Return an empty list, which means no range is missing.<br>
+<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;List&lt;String&gt; findMissingRanges(<font color="#00ff00"><b>int</b></font>[] vals,&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;start,&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;end) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;String&gt; ranges =&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;ArrayList&lt;&gt;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;prev = start -&nbsp;<font color="#ff40ff"><b>1</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>for</b></font>&nbsp;(<font color="#00ff00"><b>int</b></font>&nbsp;i =&nbsp;<font color="#ff40ff"><b>0</b></font>; i &lt;= vals.length; i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;curr = (i == vals.length) ? end +&nbsp;<font color="#ff40ff"><b>1</b></font>&nbsp;: vals[i];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(curr - prev &gt;=&nbsp;<font color="#ff40ff"><b>2</b></font>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ranges.add(getRange(prev +&nbsp;<font color="#ff40ff"><b>1</b></font>, curr -&nbsp;<font color="#ff40ff"><b>1</b></font>));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prev = curr;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;ranges;<br>
+}<br>
+<font color="#ffff00"><b>private</b></font>&nbsp;String getRange(<font color="#00ff00"><b>int</b></font>&nbsp;from,&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;to) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;(from == to) ? String.valueOf(from) : from +&nbsp;<font color="#ff40ff"><b>&quot;-&gt;&quot;</b></font>&nbsp;+ to;<br>
+}<br>
+</font>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

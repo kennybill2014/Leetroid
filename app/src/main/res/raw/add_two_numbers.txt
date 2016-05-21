@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="no_pre,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="elflord">
+
+<script type='text/javascript'>
+</script>
+</head>
+<body bgcolor="#000000" text="#ffffff">
+<font face="monospace">
+<font color="#ffff00"><b>Question</b></font>:<br>
+You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;each of their nodes contains a single digit. Add the two numbers&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;it as a linked list.<br>
+<br>
+<font color="#ffff00"><b>Input</b></font>:&nbsp;(<font color="#ff40ff"><b>2</b></font>-&gt;<font color="#ff40ff"><b>4</b></font>-&gt;<font color="#ff40ff"><b>3</b></font>) + (<font color="#ff40ff"><b>5</b></font>-&gt;<font color="#ff40ff"><b>6</b></font>-&gt;<font color="#ff40ff"><b>4</b></font>) Output:&nbsp;<font color="#ff40ff"><b>7</b></font>-&gt;<font color="#ff40ff"><b>0</b></font>-&gt;<font color="#ff40ff"><b>8</b></font><br>
+<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;ListNode addTwoNumbers(ListNode l1, ListNode l2) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListNode dummyHead =&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;ListNode(<font color="#ff40ff"><b>0</b></font>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListNode p = l1, q = l2, curr = dummyHead;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;carry =&nbsp;<font color="#ff40ff"><b>0</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;(p != null || q != null) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;x = (p != null) ? p.val :&nbsp;<font color="#ff40ff"><b>0</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;y = (q != null) ? q.val :&nbsp;<font color="#ff40ff"><b>0</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;digit = carry + x + y;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carry = digit /&nbsp;<font color="#ff40ff"><b>10</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curr.next =&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;ListNode(digit %&nbsp;<font color="#ff40ff"><b>10</b></font>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curr = curr.next;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(p != null) p = p.next;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(q != null) q = q.next;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(carry &gt;&nbsp;<font color="#ff40ff"><b>0</b></font>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curr.next =&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;ListNode(carry);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;dummyHead.next;<br>
+}<br>
+</font>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

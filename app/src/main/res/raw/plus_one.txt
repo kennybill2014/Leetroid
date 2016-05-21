@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="no_pre,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="elflord">
+
+<script type='text/javascript'>
+</script>
+</head>
+<body bgcolor="#000000" text="#ffffff">
+<font face="monospace">
+<font color="#ffff00"><b>Question</b></font>:<br>
+Given a number represented as an array of digits, plus one to the number.<br>
+Example Questions Candidate Might Ask:<br>
+<font color="#ffff00"><b>Q</b></font>:&nbsp;Could the number be negative?<br>
+<font color="#ffff00"><b>A</b></font>:&nbsp;No. Assume it is a non-negative number.<br>
+<font color="#ffff00"><b>Q</b></font>:&nbsp;How are the digits ordered in the list? For example, is the number&nbsp;<font color="#ff40ff"><b>12</b></font>&nbsp;represented by [<font color="#ff40ff"><b>1</b></font>,<font color="#ff40ff"><b>2</b></font>]&nbsp;<font color="#ff6060"><b>or</b></font>&nbsp;[<font color="#ff40ff"><b>2</b></font>,<font color="#ff40ff"><b>1</b></font>]?<br>
+<font color="#ffff00"><b>A</b></font>:&nbsp;The digits are stored such that the most significant digit is at the head of the list.<br>
+<font color="#ffff00"><b>Q</b></font>:&nbsp;Could the number contain leading zeros, such as [<font color="#ff40ff"><b>0</b></font>,<font color="#ff40ff"><b>0</b></font>,<font color="#ff40ff"><b>1</b></font>]?&nbsp;<br>
+<font color="#ffff00"><b>A</b></font>:&nbsp;No.<br>
+<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>void</b></font>&nbsp;plusOne(List&lt;Integer&gt; digits) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>for</b></font>&nbsp;(<font color="#00ff00"><b>int</b></font>&nbsp;i = digits.size() -&nbsp;<font color="#ff40ff"><b>1</b></font>; i &gt;=&nbsp;<font color="#ff40ff"><b>0</b></font>; i--) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;digit = digits.get(i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(digit &lt;&nbsp;<font color="#ff40ff"><b>9</b></font>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digits.set(i, digit +&nbsp;<font color="#ff40ff"><b>1</b></font>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<font color="#ffffff"><b>else</b></font>&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digits.set(i,&nbsp;<font color="#ff40ff"><b>0</b></font>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digits.add(<font color="#ff40ff"><b>0</b></font>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digits.set(<font color="#ff40ff"><b>0</b></font>,&nbsp;<font color="#ff40ff"><b>1</b></font>);<br>
+}<br>
+</font>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

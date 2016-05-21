@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="no_pre,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="elflord">
+
+<script type='text/javascript'>
+</script>
+</head>
+<body bgcolor="#000000" text="#ffffff">
+<font face="monospace">
+<font color="#ffff00"><b>Question</b></font>:<br>
+Given a linked list, swap every two adjacent nodes&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;its head.<br>
+For example,<br>
+Given&nbsp;<font color="#ff40ff"><b>1</b></font>-&gt;<font color="#ff40ff"><b>2</b></font>-&gt;<font color="#ff40ff"><b>3</b></font>-&gt;<font color="#ff40ff"><b>4</b></font>, you should&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;the list as&nbsp;<font color="#ff40ff"><b>2</b></font>-&gt;<font color="#ff40ff"><b>1</b></font>-&gt;<font color="#ff40ff"><b>4</b></font>-&gt;<font color="#ff40ff"><b>3.</b></font><br>
+Your algorithm should use only constant space. You may&nbsp;<font color="#ff6060"><b>not</b></font>&nbsp;modify the values in the list, only nodes itself can be changed.<br>
+Example Questions Candidate Might Ask:<br>
+<font color="#ffff00"><b>Q</b></font>:&nbsp;What&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;the number of nodes in the linked list has only odd number of nodes? A: The last node should&nbsp;<font color="#ff6060"><b>not</b></font>&nbsp;be swapped.<br>
+<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;ListNode swapPairs(ListNode head) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListNode dummy =&nbsp;<font color="#ffff00"><b>new</b></font>&nbsp;ListNode(<font color="#ff40ff"><b>0</b></font>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dummy.next = head;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListNode p = head;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListNode prev = dummy;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;(p != null &amp;&amp; p.next != null) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListNode q = p.next, r = p.next.next;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prev.next = q;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q.next = p;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.next = r;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prev = p;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p = r;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;dummy.next;<br>
+}<br>
+</font>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

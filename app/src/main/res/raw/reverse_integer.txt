@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="no_pre,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="elflord">
+
+<script type='text/javascript'>
+</script>
+</head>
+<body bgcolor="#000000" text="#ffffff">
+<font face="monospace">
+<font color="#ffff00"><b>Question</b></font>:&nbsp;<br>
+Reverse digits of an integer. For example: x =&nbsp;<font color="#ff40ff"><b>123</b></font>,&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;<font color="#ff40ff"><b>321.</b></font>&nbsp;Example Questions Candidate Might Ask:&nbsp;<br>
+<font color="#ffff00"><b>Q</b></font>:&nbsp;What about negative integers? A: For input x = –<font color="#ff40ff"><b>123</b></font>, you should&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;–<font color="#ff40ff"><b>321.</b></font>&nbsp;<br>
+<font color="#ffff00"><b>Q</b></font>:&nbsp;What&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;the integer’s last digit is&nbsp;<font color="#ff40ff"><b>0</b></font>? For example, x =&nbsp;<font color="#ff40ff"><b>10</b></font>,&nbsp;<font color="#ff40ff"><b>100</b></font>, ... A: Ignore the leading&nbsp;<font color="#ff40ff"><b>0</b></font>&nbsp;digits of the reversed integer.&nbsp;<font color="#ff40ff"><b>10</b></font>&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;<font color="#ff40ff"><b>100</b></font>&nbsp;are both reversed as&nbsp;<font color="#ff40ff"><b>1.</b></font>&nbsp;<br>
+<font color="#ffff00"><b>Q</b></font>:&nbsp;What&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;the reversed integer overflows? For example, input x =&nbsp;<font color="#ff40ff"><b>1000000003.</b></font>&nbsp;A: In&nbsp;<font color="#ffff00"><b>this</b></font>&nbsp;<font color="#ffff00"><b>case</b></font>, your function should&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;<font color="#ff40ff"><b>0.</b></font>&nbsp;<br>
+<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;reverse(<font color="#00ff00"><b>int</b></font>&nbsp;x) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;ret =&nbsp;<font color="#ff40ff"><b>0</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;(x !=&nbsp;<font color="#ff40ff"><b>0</b></font>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ffff">// handle overflow/underflow</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(Math.abs(ret) &gt;&nbsp;<font color="#ff40ff"><b>214748364</b></font>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;<font color="#ff40ff"><b>0</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ret = ret *&nbsp;<font color="#ff40ff"><b>10</b></font>&nbsp;+ x %&nbsp;<font color="#ff40ff"><b>10</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x /=&nbsp;<font color="#ff40ff"><b>10</b></font>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;ret;&nbsp;<br>
+}<br>
+</font>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

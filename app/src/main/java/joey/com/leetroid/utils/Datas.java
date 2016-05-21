@@ -31,14 +31,14 @@ public final class Datas {
     };
 
     public static String[] mDifficulties = {
-            "Easy", "Easy", "Easy",
-            "Easy", "Easy", "Easy",
-            "Easy", "Easy", "Easy",
-            "Easy", "Easy", "Easy",
-            "Easy", "Easy", "Easy",
-            "Easy", "Easy", "Easy",
-            "Easy", "Easy", "Easy",
-            "Easy", "Easy"
+            "Easy", "Medium", "Easy",
+            "Easy", "Easy", "Medium",
+            "Medium", "Easy", "Easy",
+            "Medium", "Hard", "Medium",
+            "Medium", "Medium", "Easy",
+            "Hard", "Easy", "Easy",
+            "Easy", "Easy", "Medium",
+            "Medium", "Hard"
     };
 
 }

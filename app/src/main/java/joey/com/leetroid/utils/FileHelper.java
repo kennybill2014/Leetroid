@@ -30,7 +30,7 @@ public class FileHelper {
             @Override
             public void run() {
                 BufferedReader input;
-                for (int i = 0; i < 7; i++) { // Should be mFileNames.length, bug here, should
+                for (int i = 0; i < Datas.mFileNames.length; i++) {
                     input = new BufferedReader(new InputStreamReader(mResources.openRawResource(mResources.getIdentifier(Datas.mFileNames[i], "raw", mPackageName))));
                     StringBuffer sb = new StringBuffer();
                     try {

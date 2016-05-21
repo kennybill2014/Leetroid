@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="no_pre,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="elflord">
+
+<script type='text/javascript'>
+</script>
+</head>
+<body bgcolor="#000000" text="#ffffff">
+<font face="monospace">
+<font color="#ffff00"><b>Question</b></font>:<br>
+Given two strings S&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;T, determine&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;they are both one edit distance apart. Hint:<br>
+<font color="#ff40ff"><b>1.</b></font>&nbsp;If | n – m | is greater than&nbsp;<font color="#ff40ff"><b>1</b></font>, we know immediately both are&nbsp;<font color="#ff6060"><b>not</b></font>&nbsp;one-edit distance apart.<br>
+<font color="#ff40ff"><b>2.</b></font>&nbsp;It might help&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;you consider these cases separately, m == n&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;m ≠ n.<br>
+<font color="#ff40ff"><b>3.</b></font>&nbsp;Assume that m is always ≤ n, which greatly simplifies the conditional statements.<br>
+If m &gt; n, we could just simply swap S&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;T.<br>
+<font color="#ff40ff"><b>4.</b></font>&nbsp;If m == n, it becomes finding&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;there is exactly one modified operation. If m ≠ n, you&nbsp;<font color="#ffffff"><b>do</b></font>&nbsp;<font color="#ff6060"><b>not</b></font>&nbsp;have to consider the&nbsp;<font color="#ffff00"><b>delete</b></font>&nbsp;operation. Just consider the insert operation in T.<br>
+<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;boolean isOneEditDistance(String s, String t) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;m = s.length(), n = t.length();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(m &gt; n)&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;isOneEditDistance(t, s);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(n - m &gt;&nbsp;<font color="#ff40ff"><b>1</b></font>)&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;<font color="#ff40ff"><b>false</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;i =&nbsp;<font color="#ff40ff"><b>0</b></font>, shift = n - m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;(i &lt; m &amp;&amp; s.charAt(i) == t.charAt(i)) i++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(i == m)&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;shift &gt;&nbsp;<font color="#ff40ff"><b>0</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(shift ==&nbsp;<font color="#ff40ff"><b>0</b></font>) i++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;(i &lt; m &amp;&amp; s.charAt(i) == t.charAt(i + shift)) i++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;i == m;<br>
+}<br>
+</font>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

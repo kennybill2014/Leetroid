@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="no_pre,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="elflord">
+
+<script type='text/javascript'>
+</script>
+</head>
+<body bgcolor="#000000" text="#ffffff">
+<font face="monospace">
+<font color="#ffff00"><b>Question</b></font>:&nbsp;<br>
+Implement atoi to convert a string to an integer.&nbsp;<br>
+The atoi function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from&nbsp;<font color="#ffff00"><b>this</b></font>&nbsp;character, takes an optional initial plus&nbsp;<font color="#ff6060"><b>or</b></font>&nbsp;minus sign followed by as many numerical digits as possible,&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;interprets them as a numerical value.&nbsp;<br>
+The string can contain additional characters after those that form the integral number, which are ignored&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;have no effect on the behavior of&nbsp;<font color="#ffff00"><b>this</b></font>&nbsp;function.&nbsp;<br>
+If the first sequence of non-whitespace characters in str is&nbsp;<font color="#ff6060"><b>not</b></font>&nbsp;a valid integral number,&nbsp;<font color="#ff6060"><b>or</b></font>&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;no such sequence exists because either str is empty&nbsp;<font color="#ff6060"><b>or</b></font>&nbsp;it contains only whitespace characters, no conversion is performed.&nbsp;<br>
+If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of representable values, the maximum integer value (<font color="#ff40ff"><b>2147483647</b></font>)&nbsp;<font color="#ff6060"><b>or</b></font>&nbsp;the minimum integer value (–<font color="#ff40ff"><b>2147483648</b></font>) is returned.&nbsp;<br>
+<br>
+<font color="#ffff00"><b>private</b></font>&nbsp;<font color="#00ff00"><b>static</b></font>&nbsp;<font color="#00ff00"><b>final</b></font>&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;maxDiv10 = Integer.MAX_VALUE /&nbsp;<font color="#ff40ff"><b>10</b></font>;<br>
+<font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;atoi(String str) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;i =&nbsp;<font color="#ff40ff"><b>0</b></font>, n = str.length();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;(i &lt; n &amp;&amp; Character.isWhitespace(str.charAt(i))) i++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;sign =&nbsp;<font color="#ff40ff"><b>1</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(i &lt; n &amp;&amp; str.charAt(i) ==&nbsp;<font color="#ff40ff"><b>'+'</b></font>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<font color="#ffffff"><b>else</b></font>&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(i &lt; n &amp;&amp; str.charAt(i) ==&nbsp;<font color="#ff40ff"><b>'-'</b></font>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign = -<font color="#ff40ff"><b>1</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;num =&nbsp;<font color="#ff40ff"><b>0</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;(i &lt; n &amp;&amp; Character.isDigit(str.charAt(i))) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;digit = Character.getNumericValue(str.charAt(i));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(num &gt; maxDiv10 || num == maxDiv10 &amp;&amp; digit &gt;=&nbsp;<font color="#ff40ff"><b>8</b></font>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;sign ==&nbsp;<font color="#ff40ff"><b>1</b></font>&nbsp;? Integer.MAX_VALUE : Integer.MIN_VALUE;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = num *&nbsp;<font color="#ff40ff"><b>10</b></font>&nbsp;+ digit;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;sign * num;<br>
+}<br>
+</font>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

@@ -1,9 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="no_pre,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="elflord">
+
+<script type='text/javascript'>
+</script>
+</head>
+<body bgcolor="#000000" text="#ffffff">
 <font face="monospace">
 <font color="#ffff00"><b>Question</b></font>:<br>
-Given a string, determine&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;it is a palindrome, considering only alphanumeric characters&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;ignoring cases.<br>
+Given a string, determine&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;it is a palindrome, considering only alphanumeric characters&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;ignoring cases.<br>
 For example,<br>
-<font color="#ff40ff"><b>&quot;A man, a plan, a canal: Panama&quot;</b></font>&nbsp;is a palindrome.&nbsp;<font color="#ff40ff"><b>&quot;race a car&quot;</b></font>&nbsp;is&nbsp;<font color="#ffff00"><b>not</b></font>&nbsp;a palindrome.<br>
+<font color="#ff40ff"><b>&quot;A man, a plan, a canal: Panama&quot;</b></font>&nbsp;is a palindrome.&nbsp;<font color="#ff40ff"><b>&quot;race a car&quot;</b></font>&nbsp;is&nbsp;<font color="#ff6060"><b>not</b></font>&nbsp;a palindrome.<br>
 <br>
 Example Questions Candidate Might Ask:<br>
 <font color="#ffff00"><b>Q</b></font>:&nbsp;What about an empty string? Is it a valid palindrome?<br>
@@ -11,17 +24,17 @@ Example Questions Candidate Might Ask:<br>
 <br>
 <font color="#ffff00"><b>Solution</b></font>:<br>
 O(n) runtime, O(<font color="#ff40ff"><b>1</b></font>) space:<br>
-The idea is simple, have two pointers – one at the head&nbsp;<font color="#ffff00"><b>while</b></font>&nbsp;the other one at the tail. Move them towards each other until they meet&nbsp;<font color="#ffff00"><b>while</b></font>&nbsp;skipping non-alphanumeric characters.<br>
+The idea is simple, have two pointers – one at the head&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;the other one at the tail. Move them towards each other until they meet&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;skipping non-alphanumeric characters.<br>
 Consider the&nbsp;<font color="#ffff00"><b>case</b></font>&nbsp;where given string contains only non-alphanumeric characters. This is a valid palindrome because the empty string is also a valid palindrome.<br>
 <br>
 <font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>class</b></font>&nbsp;Solution {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>public</b></font>&nbsp;boolean isPalindrome(String s) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;i =&nbsp;<font color="#ff40ff"><b>0</b></font>;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;j = s.length() -&nbsp;<font color="#ff40ff"><b>1</b></font>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>while</b></font>&nbsp;(i &lt; j) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>while</b></font>&nbsp;(i &lt; j &amp;&amp; !Character.isLetterOrDigit(s.charAt(i))) i++;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>while</b></font>&nbsp;(i &lt; j &amp;&amp; !Character.isLetterOrDigit(s.charAt(j))) j--;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;(i &lt; j) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;(i &lt; j &amp;&amp; !Character.isLetterOrDigit(s.charAt(i))) i++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>while</b></font>&nbsp;(i &lt; j &amp;&amp; !Character.isLetterOrDigit(s.charAt(j))) j--;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>return</b></font>&nbsp;<font color="#ff40ff"><b>false</b></font>;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
@@ -31,3 +44,6 @@ Consider the&nbsp;<font color="#ffff00"><b>case</b></font>&nbsp;where given stri
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 }<br>
 </font>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

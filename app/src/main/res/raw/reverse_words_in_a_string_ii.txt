@@ -1,15 +1,28 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="no_pre,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="elflord">
+
+<script type='text/javascript'>
+</script>
+</head>
+<body bgcolor="#000000" text="#ffffff">
 <font face="monospace">
 <font color="#ffff00"><b>Question</b></font>:<br>
 <br>
 Similar to Question [<font color="#ff40ff"><b>6.</b></font>&nbsp;Reverse Words in a String], but with the following constraints:<br>
-“The input string does&nbsp;<font color="#ffff00"><b>not</b></font>&nbsp;contain leading&nbsp;<font color="#ffff00"><b>or</b></font>&nbsp;trailing spaces&nbsp;<font color="#ffff00"><b>and</b></font>&nbsp;the words are always separated by a single space.”<br>
-Could you&nbsp;<font color="#ffff00"><b>do</b></font>&nbsp;it in-place without allocating extra space?<br>
+“The input string does&nbsp;<font color="#ff6060"><b>not</b></font>&nbsp;contain leading&nbsp;<font color="#ff6060"><b>or</b></font>&nbsp;trailing spaces&nbsp;<font color="#ff6060"><b>and</b></font>&nbsp;the words are always separated by a single space.”<br>
+Could you&nbsp;<font color="#ffffff"><b>do</b></font>&nbsp;it in-place without allocating extra space?<br>
 <br>
 <font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>void</b></font>&nbsp;reverseWords(<font color="#00ff00"><b>char</b></font>[] s) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp; reverse(s,&nbsp;<font color="#ff40ff"><b>0</b></font>, s.length -&nbsp;<font color="#ff40ff"><b>1</b></font>);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>for</b></font>&nbsp;(<font color="#00ff00"><b>int</b></font>&nbsp;i =&nbsp;<font color="#ff40ff"><b>0</b></font>, j =&nbsp;<font color="#ff40ff"><b>0</b></font>; j &lt;= s.length; j++) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>if</b></font>&nbsp;(j == s.length || s[j] == ‘ ‘) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>for</b></font>&nbsp;(<font color="#00ff00"><b>int</b></font>&nbsp;i =&nbsp;<font color="#ff40ff"><b>0</b></font>, j =&nbsp;<font color="#ff40ff"><b>0</b></font>; j &lt;= s.length; j++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>if</b></font>&nbsp;(j == s.length || s[j] == ‘ ‘) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reverse(s, i, j -&nbsp;<font color="#ff40ff"><b>1</b></font>);<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = j +&nbsp;<font color="#ff40ff"><b>1</b></font>;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
@@ -17,10 +30,13 @@ Could you&nbsp;<font color="#ffff00"><b>do</b></font>&nbsp;it in-place without a
 }<br>
 <br>
 <font color="#ffff00"><b>public</b></font>&nbsp;<font color="#00ff00"><b>void</b></font>&nbsp;reverse(<font color="#00ff00"><b>char</b></font>[] s,&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;begin,&nbsp;<font color="#00ff00"><b>int</b></font>&nbsp;end) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffff00"><b>for</b></font>&nbsp;(<font color="#00ff00"><b>int</b></font>&nbsp;i =&nbsp;<font color="#ff40ff"><b>0</b></font>; i &lt;= (begin + end) /&nbsp;<font color="#ff40ff"><b>2</b></font>; i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff"><b>for</b></font>&nbsp;(<font color="#00ff00"><b>int</b></font>&nbsp;i =&nbsp;<font color="#ff40ff"><b>0</b></font>; i &lt;= (begin + end) /&nbsp;<font color="#ff40ff"><b>2</b></font>; i++) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00ff00"><b>char</b></font>&nbsp;temp = s[i];<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s[i] =&nbsp;&nbsp;s[end - i];<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s[end - i] = temp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp; }<br>
 }<br>
 </font>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
