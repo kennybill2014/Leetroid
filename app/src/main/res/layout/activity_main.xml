@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="grief.com.bottomtabtest.MainActivity">
+    tools:context="joey.com.leetroid.MainActivity">
     <RelativeLayout
         android:id="@+id/frame_container"
         android:layout_alignParentTop="true"
