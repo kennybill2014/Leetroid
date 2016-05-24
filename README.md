@@ -3,7 +3,7 @@ Leetroid
 
 Introduction
 ------------
-Leetroid is an Android app showing solutions and discussions to [LeetCode](http://www.leetcode.com/), which is a useful OJ website to improve coding skills. I wrote this app to make it easier for me to review basic algorithms, and I hope it will do good to you too. 
+Leetroid is an Android app showing solutions and discussions to [LeetCode](http://www.leetcode.com/), which is a useful OJ website to improve coding skills. With both specific codes(with syntax highlighting) and ample dicussions, this app makes learning algorithms simpler and quicker. Hope you will like it.
 
 Basically, the solutions here are written in Java, they may not be optimal but are ensured to be correct. 
 
@@ -16,19 +16,16 @@ Functions
 
 Demo
 ----
-###Start the app
-![Front](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/front.png)
+###Start app
+![Main](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/main.gif)
 
-###Problem list
-![Main](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/main.png)
+###View solutions
+![problem](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/problem.gif)
 
-###Solutions to problems
-![problem](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/problem.png)
-
-###Search mode
-![search](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/search.png)
+###Keyword searching
+![search](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/search.gif)
 
 ###Online discussion
-![discussion](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/discussion.png)
+![discussion](https://github.com/zhouyizirui/Leetroid/blob/master/screenshots/discussion.gif)
 
  
