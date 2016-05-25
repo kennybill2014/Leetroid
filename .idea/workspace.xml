@@ -16,12 +16,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3fa60ad-4487-4058-ad95-332d137ea23e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemsContainer.java" afterPath="$PROJECT_DIR$/app/src/main/java/joey/com/leetroid/ProblemsContainer.java" />
-    </list>
+    <list default="true" id="e3fa60ad-4487-4058-ad95-332d137ea23e" name="Default" comment="" />
     <ignored path="Leetroid.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

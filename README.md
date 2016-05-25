@@ -30,4 +30,6 @@ Demo
 
 Contribute
 ----------
-This repository is open to constructive contributors, especially solutions contribution and bug report. Currently, the solutions here are incomplete, since the problems keep updating on LeetCode. I will try to keep pace with it.
+This repository is open to constructive contributors, especially solutions contribution and bug report. Currently, the solutions here are incomplete, since the problems keep updating on LeetCode. 
+
+I will try to keep pace with it.
