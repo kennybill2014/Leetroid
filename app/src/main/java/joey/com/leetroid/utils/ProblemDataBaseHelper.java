@@ -35,7 +35,6 @@ public class ProblemDataBaseHelper {
 
         long newRowId;
         newRowId = db.insert(ProblemStatusEntry.TABLE_NAME, null, values);
-        System.out.println("The new id in database is " + newRowId);
     }
 
     public int getStatusDatabase(int id) {

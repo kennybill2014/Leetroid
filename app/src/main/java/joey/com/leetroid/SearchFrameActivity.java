@@ -57,19 +57,18 @@ public class SearchFrameActivity extends Activity {
 
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            System.out.println("beforeTextChanged: " + s + " start " + start + " count " + count + " after " + after);
+
         }
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            System.out.println("onTextChanged: " + s + " start " + start + " count " + count + " before " + before);
             searchProblems(s.toString());
             mSuggestionAdapter.notifyDataSetChanged();
         }
 
         @Override
         public void afterTextChanged(Editable s) {
-            System.out.println("afterTextChanged: " + s);
+
         }
 
     }

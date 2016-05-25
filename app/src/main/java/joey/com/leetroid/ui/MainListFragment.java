@@ -34,7 +34,6 @@ public class MainListFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        System.out.println("onCreateView in FirstFragment");
         if (mRootView == null) {
             View view = inflater.inflate(R.layout.main_list_fragment, container, false);
             initViews(view);
@@ -45,7 +44,6 @@ public class MainListFragment extends Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        System.out.println("onActivityCreated in FirstFragment");
         super.onActivityCreated(savedInstanceState);
     }
 
@@ -100,7 +98,6 @@ public class MainListFragment extends Fragment {
                 convertView = LayoutInflater.from(mContext).inflate(R.layout.problem_list_item, null);
             }
             Problem problem = ProblemsContainer.getInstance().getProblem(position);
-            System.out.println("Position " + position + " Title " + problem.mTitle);
             ((ProblemListItemView) convertView).setProblemAttributes(problem, mAdapter);
             return convertView;
         }

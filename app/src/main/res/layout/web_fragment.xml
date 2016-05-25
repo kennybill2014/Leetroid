@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
             android:layout_centerInParent="true"
-            android:text="Discussions"
+            android:text="Discussion"
             android:textSize="20dp"/>
         <!--<Button-->
             <!--android:layout_width="wrap_content"-->

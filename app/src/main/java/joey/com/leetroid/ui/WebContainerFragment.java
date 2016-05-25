@@ -16,15 +16,13 @@ public class WebContainerFragment extends BaseContainerFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        System.out.println("onCreateView in SecondContainerFragment");
         return inflater.inflate(R.layout.container_framelayout, null);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        System.out.println("onActivityCreated in SecondContainerFragment");
         super.onActivityCreated(savedInstanceState);
-        if (!isViewInited) { // 问题在于是否想要replace
+        if (!isViewInited) { // replace ?
             isViewInited = true;
             replaceFragment(new WebFragment(), false);
         }

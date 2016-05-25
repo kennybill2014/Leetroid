@@ -8,7 +8,6 @@ import joey.com.leetroid.R;
 public class BaseContainerFragment extends Fragment {
 
     public void replaceFragment(Fragment fragment, boolean addToBackStack) {
-        System.out.println("replaceFragment with " + fragment.toString());
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         if (addToBackStack) {
             transaction.addToBackStack(null);

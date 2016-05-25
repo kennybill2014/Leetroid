@@ -34,7 +34,6 @@ public class WebFragment extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        System.out.println("onCreateView in SecondFragment");
         if (mRootView == null) {
             View view = inflater.inflate(R.layout.web_fragment, container, false);
             initWebView(view);
@@ -45,7 +44,6 @@ public class WebFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        System.out.println("onActivityCreated in SecondFragment");
         super.onActivityCreated(savedInstanceState);
     }
 
