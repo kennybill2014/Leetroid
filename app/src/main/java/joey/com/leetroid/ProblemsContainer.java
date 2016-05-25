@@ -5,13 +5,14 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 
-// vim *.cpp
-// :syntax on
-// :colorscheme evening
-// :let html_use_css=0
-// :TOhtml
-// Remove header and meta
-// Copy the content to *.txt
+// How to make syntax highlighting content ?
+// (1) vim *.cpp
+// (2) :syntax on
+// (3) :colorscheme elflord
+// (4) :let html_use_css=0
+// (5) :TOhtml
+// (6) Remove title, header and meta
+// (7) Copy the content to *.txt
 
 public class ProblemsContainer {
 
@@ -59,7 +60,8 @@ public class ProblemsContainer {
     }
 
     /**
-     * 更新问题列表
+     * Refresh problem list
+     * Sort algorithm used here, first compare the star status, then the problem index.
      */
     public void refreshProblemList() {
         Collections.sort(mProblems, new Comparator<Problem>() {

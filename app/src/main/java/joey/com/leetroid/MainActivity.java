@@ -46,6 +46,9 @@ public class MainActivity extends FragmentActivity {
         mProblemListHelper.storeStatus();
     }
 
+    /**
+     * init views in MainActivity
+     */
     private void initView() {
         mFragmentTabHost = (FragmentTabHost) findViewById(R.id.tab_host);
         mFragmentTabHost.setup(this, getSupportFragmentManager(), R.id.frame_container);
